@@ -1,0 +1,3 @@
+# Source PDFs (venue brochures, hotel quotes) stay local
+*.pdf
+__pycache__/

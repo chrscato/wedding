@@ -1,0 +1,551 @@
+<title>Makray Golf Club Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single 880px document column; title block, metadata, contents, then numbered sections with ruled tables. Light only by design. */
+:root {
+  --paper: #ffffff;
+  --ink: #1b1f24;
+  --muted: #5a6370;
+  --rule: #d5d9de;
+  --head: #f3f5f7;
+  --accent: #1f3b5c;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 14.5px; line-height: 1.55; }
+.doc { max-width: 880px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; }
+h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); text-wrap: balance; }
+h3 { font-size: 0.95rem; font-weight: 600; margin: 18px 0 8px; }
+p { margin: 0 0 10px; max-width: 72ch; }
+ul { margin: 0 0 10px; padding-left: 1.3em; }
+li { margin-bottom: 3px; }
+a { color: var(--accent); }
+.sub { color: var(--muted); margin: 0 0 20px; }
+.num, td.r, th.r { font-variant-numeric: tabular-nums; }
+.small { font-size: 0.85rem; color: var(--muted); }
+
+.meta { width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 0.88rem; }
+.meta th { width: 160px; text-align: left; font-weight: 500; color: var(--muted); padding: 5px 0; vertical-align: top; }
+.meta td { padding: 5px 0; }
+.meta tr { border-top: 1px solid var(--rule); }
+.meta tr:last-child { border-bottom: 1px solid var(--rule); }
+
+.toc { border: 1px solid var(--rule); padding: 14px 18px; margin-bottom: 36px; }
+.toc strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.toc ol { margin: 0; columns: 2; column-gap: 32px; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+section { margin-bottom: 40px; scroll-margin-top: 16px; }
+
+.tbl { overflow-x: auto; margin-bottom: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.data th, .data td { border: 1px solid var(--rule); padding: 6px 10px; text-align: left; vertical-align: top; }
+.data thead th { background: var(--head); font-weight: 600; }
+.data tbody th { font-weight: 400; }
+.data td.r, .data th.r { text-align: right; white-space: nowrap; }
+.data tr.total td, .data tr.total th { font-weight: 600; background: var(--head); }
+
+.calc { border: 1px solid var(--rule); padding: 16px 18px; margin-bottom: 12px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 20px; margin-bottom: 16px; }
+.field { display: grid; gap: 4px; align-content: start; }
+.field label { font-weight: 500; font-size: 0.85rem; }
+.field input[type="number"], .field select { font: inherit; padding: 5px 8px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; font-variant-numeric: tabular-nums; }
+.field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field .hint { font-size: 0.78rem; color: var(--muted); }
+.checks { display: grid; gap: 6px; font-size: 0.88rem; }
+.checks label { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+.checks input { margin-top: 3px; }
+
+.mix select { font: inherit; padding: 4px 6px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; min-width: 200px; }
+.mix .share { display: flex; align-items: center; gap: 10px; min-width: 180px; }
+.mix input[type="range"] { flex: 1; accent-color: var(--accent); }
+.mix output { font-variant-numeric: tabular-nums; width: 3.2em; text-align: right; }
+.mix select:focus-visible, .mix input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.cols > div { min-width: 0; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .cols { grid-template-columns: minmax(0, 1fr); }
+  .toc ol { columns: 1; }
+  .meta th { width: 120px; }
+}
+</style>
+
+<div class="doc">
+
+<h1>Makray Memorial Golf Club</h1>
+<p class="sub">McManus-Cato wedding · Venue evaluation</p>
+
+<table class="meta">
+  <tr><th>Venue</th><td>Makray Memorial Golf Club, 1010 S. Northwest Highway, Barrington, IL 60010 · (847) 381-6501</td></tr>
+  <tr><th>Wedding team</th><td>Laurie Hudak, ext. 104, lhudak@makraygolf.com<br>Stacie Wojtkowski, ext. 103, swojtkowski@makraygolf.com<br>Leeza Grosvenor, ext. 107, lgrosvenor@makraygolf.com</td></tr>
+  <tr><th>Expected guests</th><td>200–225</td></tr>
+  <tr><th>Pricing basis</th><td>2026 published package (no quote yet)</td></tr>
+  <tr><th>Prepared</th><td>October 1, 2026</td></tr>
+</table>
+
+<nav class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#estimator">Cost estimator</a></li>
+    <li><a href="#included">Package inclusions</a></li>
+    <li><a href="#entrees">Entrées and pricing</a></li>
+    <li><a href="#courses">Hors d'oeuvres, soup, salad and sides</a></li>
+    <li><a href="#bar">Bar</a></li>
+    <li><a href="#sweets">Sweets and late night</a></li>
+    <li><a href="#ceremony">Ceremony and enhancements</a></li>
+    <li><a href="#payment">Payment schedule and policies</a></li>
+    <li><a href="#open">Open items</a></li>
+  </ol>
+</nav>
+
+<section id="summary">
+  <h2>1. Summary</h2>
+  <p>Makray sells one all-inclusive package priced per person by entrée, from $116.50 to $144 before fees. The 20% service charge and 10% tax make the real cost 1.32× the menu price. These figures are estimates from the published 2026 package; we don't have a quote yet.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
+    <tbody>
+      <tr><th>Chicken-led menu, 3 entrée choices</th><td class="r">$123</td><td class="r">$34,222</td><td class="r">$36,657</td><td class="r">$38,281</td></tr>
+      <tr><th>50% chicken Marsala / 50% filet</th><td class="r">$134.50</td><td class="r">$37,258</td><td class="r">$39,921</td><td class="r">$41,696</td></tr>
+      <tr><th>Filet, 3 entrée choices</th><td class="r">$147</td><td class="r">$40,558</td><td class="r">$43,469</td><td class="r">$45,409</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>All scenarios include the Classic bar, 3 hors d'oeuvres and the $1,750 ceremony package. The 50/50 row assumes each guest pays for their own entrée; if Makray charges everyone the filet price, the cost is close to the filet row.</li>
+    <li>For reference, Hyatt Lodge's Classic quote at 215 guests is $49,867, which includes room rental but no ceremony fee.</li>
+    <li>The Saturday F&amp;B minimum of $16,000 is well below either scenario.</li>
+    <li>Final payment must be made by cashier's check or cash.</li>
+  </ul>
+</section>
+
+<section id="estimator">
+  <h2>2. Cost estimator</h2>
+  <div class="calc">
+    <div class="fields">
+      <div class="field">
+        <label for="guests">Total guests</label>
+        <input type="number" id="guests" min="1" max="400" value="215">
+        <span class="hint">Expected range is 200–225.</span>
+      </div>
+      <div class="field">
+        <label for="rule">Split menu pricing</label>
+        <select id="rule">
+          <option value="own" selected>Each guest pays for their own entrée</option>
+          <option value="max">Everyone pays the highest entrée price</option>
+        </select>
+        <span class="hint">Makray hasn't said which applies. See open item 3.</span>
+      </div>
+      <div class="field">
+        <label for="hors">Passed hors d'oeuvres</label>
+        <select id="hors">
+          <option value="0" selected>3 (included)</option>
+          <option value="3.5">4 (+$3.50/pp)</option>
+          <option value="6.5">5 (+$6.50/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="bar">Bar package</label>
+        <select id="bar">
+          <option value="0" selected>Classic (included)</option>
+          <option value="10">Premium (+$10/pp)</option>
+          <option value="12">Top Shelf (+$12/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="kids">Of those, children (12 and under)</label>
+        <input type="number" id="kids" min="0" max="100" value="0">
+        <span class="hint">$34.95 each.</span>
+      </div>
+      <div class="field">
+        <label for="vendors">Vendor meals (additional)</label>
+        <input type="number" id="vendors" min="0" max="50" value="0">
+        <span class="hint">$40 each, option 1.</span>
+      </div>
+      <div class="field">
+        <span style="font-weight:500;font-size:0.85rem">Other charges</span>
+        <div class="checks">
+          <label for="cer"><input type="checkbox" id="cer" checked> Ceremony package, $1,750</label>
+          <label for="patio"><input type="checkbox" id="patio"> Private patio lawn, $800</label>
+          <label for="tip"><input type="checkbox" id="tip"> "No tip jar" fee, $250 per bartender</label>
+        </div>
+      </div>
+    </div>
+    <h3>Entrée mix (adult guests)</h3>
+    <p class="small">Choose up to three entrées and drag each slider to set its share of guests. Shares are scaled to add up to 100%. Set a row to "Not offered" to drop it.</p>
+    <div class="tbl"><table class="data mix">
+      <thead><tr><th>Entrée</th><th>Share</th><th class="r">Guests</th><th class="r">Price / pp</th></tr></thead>
+      <tbody id="mix-body"></tbody>
+    </table></div>
+    <div class="tbl"><table class="data">
+      <thead><tr><th>Line</th><th class="r">Amount</th></tr></thead>
+      <tbody id="calc-body"></tbody>
+    </table></div>
+  </div>
+  <p class="small">Method: the entrée mix sets the average entrée price. Adults pay that average plus the split menu fee (+$2/pp for 2 entrées, +$3/pp for 3; combination entrées are exempt), plus any hors d'oeuvres and bar upgrades. Children and vendor meals are added, then a 20% service charge, then 10% tax on both. The ceremony, patio and bartender fees are added without service charge or tax because their treatment isn't stated. The guide says 1 bartender per 100 guests.</p>
+</section>
+
+<section id="included">
+  <h2>3. Package inclusions</h2>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Coordination</th><td>An on-site wedding team through planning, the rehearsal and the wedding day</td></tr>
+      <tr><th>Wedding suite</th><td>Suite with champagne</td></tr>
+      <tr><th>Cocktail hour</th><td>3 butler-passed hors d'oeuvres, unlimited for 1 hour</td></tr>
+      <tr><th>Bar</th><td>4-hour Classic open bar with domestic beer and CK Mondavi wines</td></tr>
+      <tr><th>Dinner</th><td>Soup or salad, entrée with vegetable and starch, cake and coffee. Unlimited red and white wine with dinner.</td></tr>
+      <tr><th>Toast</th><td>Champagne for all guests</td></tr>
+      <tr><th>Cake</th><td>Custom tiered cake from Lovin' Oven Cakery with buttercream icing and filling. A serving set and stand are available on request.</td></tr>
+      <tr><th>Linen and décor</th><td>White or ivory floor-length linen, colored napkins, skirting and swag on service tables, mirror tile and 3 votives per table</td></tr>
+      <tr><th>Photos</th><td>Reserved golf carts and a guided tour of course locations for the wedding party</td></tr>
+      <tr><th>Tasting</th><td>Private, up to 6 people, 4–5 months before the wedding</td></tr>
+      <tr><th>Golf</th><td>Package for 4 with carts. Extra golfers pay standard rates.</td></tr>
+      <tr><th>Coat check</th><td>Complimentary, seasonal</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="entrees">
+  <h2>4. Entrées and pricing</h2>
+  <p>The price is the all-inclusive package rate per person, before the service charge and tax. Offering 2 entrées adds $2/pp and 3 adds $3/pp; combination entrées are exempt.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Category</th><th>Entrée</th><th class="r">Per person</th></tr></thead>
+    <tbody>
+      <tr><td>Vegetarian / vegan</td><td>Penne with grilled vegetables; Ratatouille Wellington (vegan); Vegan ravioli</td><td class="r">$116.50</td></tr>
+      <tr><td>Poultry</td><td>Chicken piccata</td><td class="r">$119</td></tr>
+      <tr><td>Poultry</td><td>Boursin, Madeira, Lemon Tarragon, Sicilian Palermo, Tuscany</td><td class="r">$120</td></tr>
+      <tr><td>Poultry</td><td>Marsala, Moutarde, Mediterranean</td><td class="r">$121</td></tr>
+      <tr><td>Poultry</td><td>Macadamia chicken</td><td class="r">$122</td></tr>
+      <tr><td>Pork</td><td>Roast loin of pork</td><td class="r">$120</td></tr>
+      <tr><td>Pork</td><td>French pork chop (14 oz); Pork tenderloin</td><td class="r">$122</td></tr>
+      <tr><td>Seafood</td><td>Atlantic salmon</td><td class="r">$122</td></tr>
+      <tr><td>Seafood</td><td>Mahi mahi; Shrimp scampi</td><td class="r">$125</td></tr>
+      <tr><td>Seafood</td><td>Chilean sea bass; Halibut (April–October)</td><td class="r">$130.50</td></tr>
+      <tr><td>Beef</td><td>Beef tournedos (two 4 oz filets); NY strip (12 oz)</td><td class="r">$129</td></tr>
+      <tr><td>Beef</td><td>Braised short rib</td><td class="r">$131</td></tr>
+      <tr><td>Beef</td><td>8 oz filet mignon</td><td class="r">$144</td></tr>
+      <tr><td>Combination</td><td>Filet and chicken</td><td class="r">$129</td></tr>
+      <tr><td>Combination</td><td>Filet and crab cake; Filet and shrimp scampi</td><td class="r">$131</td></tr>
+      <tr><td>Combination</td><td>Filet and fresh fish; Filet and lobster tail</td><td class="r">Market</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Sauces</th><th>Options</th></tr></thead>
+    <tbody>
+      <tr><th>Beef</th><td>Roasted shallot, Marsala, cabernet garlic demi, mustard demi, bleu cheese, mushroom demi, maître d' butter</td></tr>
+      <tr><th>Chicken</th><td>Lemon caper butter, Marsala, roasted garlic demi, champagne cream, Boursin cream, dark Madeira</td></tr>
+      <tr><th>Pork</th><td>Roasted garlic demi, apple brandy demi, mustard demi</td></tr>
+      <tr><th>Fish</th><td>Lemon caper butter, smoked tomato butter, citrus butter, orange basil butter, Mediterranean, dill cream, sage cream, Asian teriyaki</td></tr>
+      <tr><th>Upgrade</th><td>Béarnaise, +$3/pp</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Other meals</th><th>Detail</th><th class="r">Price</th></tr></thead>
+    <tbody>
+      <tr><td>Children, 12 and under</td><td>Hors d'oeuvres, entrée (cheeseburger, cheese pizza, mac and cheese, buttered noodles or chicken tenders), fruit cup, cake, soft drinks</td><td class="r">$34.95</td></tr>
+      <tr><td>Vendor, option 1</td><td>Chicken, pork or vegetarian entrée, soft drinks</td><td class="r">$40</td></tr>
+      <tr><td>Vendor, option 2</td><td>Filet, combination or fish entrée, soft drinks</td><td class="r">$45</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="courses">
+  <h2>5. Hors d'oeuvres, soup, salad and sides</h2>
+  <h3>Butler-passed hors d'oeuvres</h3>
+  <p>3 choices are included. A 4th costs $3.50/pp and a 5th $6.50/pp. They're unlimited during the 1-hour cocktail reception.</p>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Cold</th><td>Antipasto skewers (GF), beef crostini, bruschetta, pastry shell with seafood, sesame tuna, shrimp cocktail (GF, +$1/pp)</td></tr>
+      <tr><th>Hot</th><td>Stuffed baby portobellos (GF), bacon-wrapped dates, bleu cheese and fig flatbread, candied apple pork belly, Caribbean risotto cake (vegan), chicken or beef satays, chicken sachets, coconut shrimp, crab cakes, grilled calamari (GF), mini pizzas, pork potstickers, quiche, sesame chicken tenders, spanakopita, Swedish meatballs, three-cheese artichoke beignets, vegetable egg roll</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Stationed hors d'oeuvres (per person, 30-person minimum)</h3>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Station</th><th class="r">Price</th><th>Station</th><th class="r">Price</th></tr></thead>
+    <tbody>
+      <tr><td>Charcuterie</td><td class="r">$6.50</td><td>Chicken wings</td><td class="r">$4.25</td></tr>
+      <tr><td>Cheese tray</td><td class="r">$5.25</td><td>Seafood ceviche</td><td class="r">$5.50</td></tr>
+      <tr><td>Chips and salsa (+$3 guacamole)</td><td class="r">$3.25</td><td>Spinach artichoke dip</td><td class="r">$4.25</td></tr>
+      <tr><td>Crudités</td><td class="r">$3.25</td><td>Tuna poke</td><td class="r">$5.50</td></tr>
+      <tr><td>Fruit tray</td><td class="r">$5.00</td><td>Hummus and pita</td><td class="r">$3.50</td></tr>
+      <tr><td>Grilled vegetable tray</td><td class="r">$3.25</td><td>Poached / smoked salmon (per 60 people)</td><td class="r">$140 / $150</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Soup or salad</h3>
+  <p>You choose one; it's +$3.50/pp to serve both.</p>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Soups</th><td>Minestrone, tomato bisque, chicken tortellini, cream of mushroom, potato leek, loaded baked potato, cream of asparagus, chicken wild rice, broccoli cheddar, smoked chicken and corn chowder, gazpacho</td></tr>
+      <tr><th>Soup upgrades</th><td>French onion +$2.50; lobster bisque +$4</td></tr>
+      <tr><th>Salads</th><td>Caesar, Chef John's Wild Berry, Clubhouse, Fresh Garden, Mediterranean, Spinach</td></tr>
+      <tr><th>Salad upgrades</th><td>Caprese +$1.75; Caribbean +$1.75; Wedge +$3</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Sides</h3>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Vegetables</th><td>All are served with a Romano-crusted tomato. Choose green beans and carrot, broccoli and carrot, a mixed medley, or balsamic grilled vegetables.</td></tr>
+      <tr><th>Vegetable upgrades</th><td>Stir-fry +$2.25; grilled asparagus +$2.50; vegetable bundle +$2.50</td></tr>
+      <tr><th>Starches</th><td>Rice pilaf, wild rice blend, Vesuvio potatoes, lemon jasmine rice, Mediterranean orzo, garlic mashed potatoes, herb roasted potatoes, angel hair pasta</td></tr>
+      <tr><th>Starch upgrades</th><td>Cheese tortellini or twice-baked potato +$3; family-style pasta +$6; studded mashed potatoes +$1.50</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="bar">
+  <h2>6. Bar</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Package</th><th class="r">Cost</th><th>Spirits and beer</th></tr></thead>
+    <tbody>
+      <tr><th>Classic</th><td class="r">Included, 4 hr</td><td>Smirnoff, Beefeater, Bacardi, Canadian Club, Seagram's 7 and VO, Jim Beam, Bushmills, J&amp;B, Ten High, Christian Brothers, house tequila</td></tr>
+      <tr><th>Premium</th><td class="r">+$10/pp</td><td>Classic plus Stoli, Absolut, Tito's, Tanqueray, Malibu, Captain Morgan, Jack Daniel's, Tullamore Dew, Buffalo Trace, Maker's Mark, JW Red, Dewar's, Lunazul; High Noon, Amstel Light, Corona and 2 specialty beers</td></tr>
+      <tr><th>Top Shelf</th><td class="r">+$12/pp</td><td>Premium plus Grey Goose, Ketel One, Bombay Sapphire, Jameson, Glenlivet, Glenfiddich, Chivas, JW Black, Crown Royal, Basil Hayden, Woodford, Bulleit, Remy Martin, Courvoisier, Casamigos, Baileys, Kahlúa; 4 specialty beers</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Bar charge</th><th class="r">Price</th></tr></thead>
+    <tbody>
+      <tr><td>Bar open during dinner: Call / Premium / Top Shelf</td><td class="r">$9 / $10 / $12 per person</td></tr>
+      <tr><td>Extended bar</td><td class="r">$300 per half hour, plus drinks on a tab</td></tr>
+      <tr><td>"No tip jar" fee</td><td class="r">$250 per bartender</td></tr>
+      <tr><td>Additional bartender (standard is 1 per 100 guests)</td><td class="r">$200</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Every package includes CK Mondavi wines and bottles of Miller Lite, Michelob Ultra, Budweiser, Bud Light, Stella, Heineken and Coors Light. Signature drinks depend on the package. Craft and import beers are available, including Two Hearted, Zombie Dust, Gumball Head, Blue Moon, Modelo and Guinness.</p>
+</section>
+
+<section id="sweets">
+  <h2>7. Sweets and late night</h2>
+  <div class="cols">
+    <div>
+      <h3>Sweets</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>Standard sweets table</td><td class="r">$11.50/pp</td></tr>
+          <tr><td>Fruit display</td><td class="r">$5/pp</td></tr>
+          <tr><td>Dessert shooters</td><td class="r">$57/dozen</td></tr>
+          <tr><td>Sweet Ending (Kahlúa ice cream)</td><td class="r">$5.25/pp</td></tr>
+          <tr><td>Vanilla ice cream with cake</td><td class="r">$2.50/pp</td></tr>
+          <tr><td>Coffee station (+$4.25 cordials, +$125 attendant)</td><td class="r">$6/pp</td></tr>
+          <tr><td>Outside sweets display</td><td class="r">$225</td></tr>
+          <tr><td>Outside cake cutting fee</td><td class="r">$1.50/pp</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3>Late night (30-piece minimum, until 11pm)</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>Italian beef / mini cheeseburger</td><td class="r">$4.75 each</td></tr>
+          <tr><td>Mini chicken sandwich</td><td class="r">$5 each</td></tr>
+          <tr><td>Vienna beef hot dog</td><td class="r">$3.70 each</td></tr>
+          <tr><td>Chicken tenders</td><td class="r">$2.70 each</td></tr>
+          <tr><td>Shooter fries</td><td class="r">$2.40 each</td></tr>
+          <tr><td>Buffalo wings</td><td class="r">$4.25 each</td></tr>
+          <tr><td>Mini pizzas</td><td class="r">$3.50 each</td></tr>
+          <tr><td>Chips and salsa (+$3 guacamole)</td><td class="r">$3.25/pp</td></tr>
+          <tr><td>Spinach artichoke dip</td><td class="r">$4.25/pp</td></tr>
+          <tr><td>Cheese display</td><td class="r">$5.25/pp</td></tr>
+          <tr><td>Outside vendor fee</td><td class="r">$175</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+</section>
+
+<section id="ceremony">
+  <h2>8. Ceremony and enhancements</h2>
+  <p><strong>Ceremony package, $1,750.</strong> It includes a rehearsal led by the on-site coordinators, setup, closing off the ceremony areas, preparing the grounds, and white wood garden chairs. You can hold the ceremony on the patio lawn, by the lake, or indoors. A private patio lawn costs $800 more and closes the restaurant patio; it isn't available for Friday weddings.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Enhancement</th><th class="r">Price</th></tr></thead>
+    <tbody>
+      <tr><td>Chair cover with sash</td><td class="r">$8.95 each</td></tr>
+      <tr><td>Chiavari chairs: gold, silver, black, white, fruitwood, mahogany</td><td class="r">$10.95 each</td></tr>
+      <tr><td>Chiavari chairs: copper, crystal, vintage</td><td class="r">$12.50 each</td></tr>
+      <tr><td>Farm chairs</td><td class="r">$13 each</td></tr>
+      <tr><td>Small-order fee (under 100 chairs or covers)</td><td class="r">$150</td></tr>
+      <tr><td>White glove service</td><td class="r">$125</td></tr>
+      <tr><td>Projector / screen for a video montage</td><td class="r">$75 / $50</td></tr>
+      <tr><td>Piano rental</td><td class="r">$80</td></tr>
+      <tr><td>Golfer's Lounge for the wedding party (plus food)</td><td class="r">$350</td></tr>
+      <tr><td>Daytime setup from 11am: center of ballroom / full ballroom</td><td class="r">$1,500 / $3,500</td></tr>
+      <tr><td>Wedding party food: mini sandwiches, fruit kabobs, chips</td><td class="r">$13.50/pp</td></tr>
+      <tr><td>Mimosa bar, 1½ hours</td><td class="r">$15.50/pp</td></tr>
+      <tr><td>Valet parking</td><td class="r">Inquire</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="payment">
+  <h2>9. Payment schedule and policies</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>When</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>At contract</td><td>$2,000 non-refundable deposit, which counts toward the balance</td></tr>
+      <tr><td>180 days out</td><td>25% of the food and beverage minimum</td></tr>
+      <tr><td>4–5 months out</td><td>Private tasting, up to 6 people</td></tr>
+      <tr><td>90 days out</td><td>Half of the estimated cost</td></tr>
+      <tr><td>14 days out</td><td>Final guest count and floor plan ($100 late fee for the floor plan). The count can go up but not down.</td></tr>
+      <tr><td>10 days out</td><td>Final payment, cashier's check or cash only</td></tr>
+      <tr><td>24–48 hours out</td><td>Drop off favors, place cards and other items</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Reception night</th><th class="r">F&amp;B minimum</th><th>Peak (May–Dec)</th><th>Non-peak (Jan–Apr)</th></tr></thead>
+    <tbody>
+      <tr><td>Friday</td><td class="r">$12,000</td><td>5% discount</td><td>10% discount, lower minimum</td></tr>
+      <tr><td>Saturday</td><td class="r">$16,000</td><td>No discount</td><td>10% discount, lower minimum</td></tr>
+      <tr><td>Sunday</td><td class="r">$8,000</td><td>10% discount</td><td>10% discount, lower minimum</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Minimums exclude tax and the service charge. There are no discounts on holiday weekends. The service charge is 20% on food and beverage, and tax is 10% on food, beverage and the service charge. Prices may rise, but by no more than 5%.</p>
+</section>
+
+<section id="open">
+  <h2>10. Open items</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Formal quote</td><td>All figures here come from the published 2026 package.</td><td>Request a quote for our date and headcount</td></tr>
+      <tr><td>2</td><td>2028 pricing</td><td>Prices may rise up to 5%. It's unclear if that's per year or in total.</td><td>Ask whether the rate can be locked</td></tr>
+      <tr><td>3</td><td>Split menu pricing</td><td>Unclear whether guests pay their own entrée's price or the highest one.</td><td>Confirm</td></tr>
+      <tr><td>4</td><td>"No tip jar" fee</td><td>$250 per bartender; about $750 at our size. It's unclear whether it's optional.</td><td>Confirm</td></tr>
+      <tr><td>5</td><td>Ceremony fee taxes</td><td>Unclear whether the $1,750 is subject to the service charge and tax.</td><td>Confirm</td></tr>
+      <tr><td>6</td><td>Capacity</td><td>The ballroom's seated capacity with a dance floor isn't stated.</td><td>Confirm 225 fits</td></tr>
+      <tr><td>7</td><td>Rain plan</td><td>An outdoor ceremony needs an indoor backup.</td><td>Ask about the process and timing</td></tr>
+      <tr><td>8</td><td>Guest rooms</td><td>Makray is a golf club with no hotel on site.</td><td>Plan a nearby hotel block and transport</td></tr>
+      <tr><td>9</td><td>Final payment method</td><td>Cashier's check or cash only.</td><td>Plan ahead</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  Source: Makray Memorial Golf Club 2026 Wedding Package (PDF). Menu pages were transcribed from images in the PDF.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ENTREES = [
+    { g: "Vegetarian / vegan", n: "Penne with grilled vegetables", p: 116.5 },
+    { g: "Vegetarian / vegan", n: "Ratatouille Wellington (vegan)", p: 116.5 },
+    { g: "Vegetarian / vegan", n: "Vegan ravioli", p: 116.5 },
+    { g: "Poultry", n: "Chicken piccata", p: 119 },
+    { g: "Poultry", n: "Boursin chicken", p: 120 },
+    { g: "Poultry", n: "Chicken Madeira", p: 120 },
+    { g: "Poultry", n: "Lemon tarragon chicken", p: 120 },
+    { g: "Poultry", n: "Sicilian Palermo chicken", p: 120 },
+    { g: "Poultry", n: "Tuscany chicken", p: 120 },
+    { g: "Poultry", n: "Chicken Marsala", p: 121 },
+    { g: "Poultry", n: "Chicken Moutarde", p: 121 },
+    { g: "Poultry", n: "Mediterranean chicken", p: 121 },
+    { g: "Poultry", n: "Macadamia chicken", p: 122 },
+    { g: "Pork", n: "Roast loin of pork", p: 120 },
+    { g: "Pork", n: "French pork chop", p: 122 },
+    { g: "Pork", n: "Pork tenderloin", p: 122 },
+    { g: "Seafood", n: "Atlantic salmon", p: 122 },
+    { g: "Seafood", n: "Mahi mahi", p: 125 },
+    { g: "Seafood", n: "Shrimp scampi", p: 125 },
+    { g: "Seafood", n: "Chilean sea bass", p: 130.5 },
+    { g: "Seafood", n: "Halibut (Apr–Oct)", p: 130.5 },
+    { g: "Beef", n: "Beef tournedos", p: 129 },
+    { g: "Beef", n: "NY strip", p: 129 },
+    { g: "Beef", n: "Braised short rib", p: 131 },
+    { g: "Beef", n: "8 oz filet mignon", p: 144 },
+    { g: "Combination (no split fee)", n: "Filet and chicken", p: 129, combo: true },
+    { g: "Combination (no split fee)", n: "Filet and crab cake", p: 131, combo: true },
+    { g: "Combination (no split fee)", n: "Filet and shrimp scampi", p: 131, combo: true }
+  ];
+  var DEFAULTS = [[9, 50], [24, 50], [-1, 0]]; // Chicken Marsala 50%, filet 50%, third row off
+  var KID = 34.95, VENDOR = 40;
+  var fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+  var int = function (el, lo, hi) { var n = parseInt(el.value, 10); if (isNaN(n)) n = 0; return Math.max(lo, Math.min(hi, n)); };
+
+  function options() {
+    var html = '<option value="-1">Not offered</option>', group = null;
+    ENTREES.forEach(function (e, i) {
+      if (e.g !== group) { if (group) html += "</optgroup>"; group = e.g; html += '<optgroup label="' + group + '">'; }
+      html += '<option value="' + i + '">' + e.n + " · " + fmt.format(e.p) + "</option>";
+    });
+    return html + "</optgroup>";
+  }
+  var mixBody = $("mix-body");
+  mixBody.innerHTML = DEFAULTS.map(function (d, i) {
+    var n = i + 1;
+    return '<tr><td><select id="me' + n + '" aria-label="Entrée ' + n + '">' + options() + "</select></td>" +
+      '<td><div class="share"><input type="range" id="ms' + n + '" min="0" max="100" step="5" value="' + d[1] + '" aria-label="Entrée ' + n + ' share">' +
+      '<output id="mo' + n + '"></output></div></td>' +
+      '<td class="r" id="mg' + n + '"></td><td class="r" id="mp' + n + '"></td></tr>';
+  }).join("");
+  DEFAULTS.forEach(function (d, i) { $("me" + (i + 1)).value = String(d[0]); });
+
+  function render() {
+    var g = Math.max(1, int($("guests"), 1, 400));
+    var k = int($("kids"), 0, g), v = int($("vendors"), 0, 50), adults = g - k;
+    var rows = [1, 2, 3].map(function (n) {
+      var idx = parseInt($("me" + n).value, 10);
+      return { n: n, e: idx >= 0 ? ENTREES[idx] : null, w: parseInt($("ms" + n).value, 10) };
+    });
+    var active = rows.filter(function (r) { return r.e && r.w > 0; });
+    if (!active.length && rows[0].e) active = [{ n: 1, e: rows[0].e, w: 100 }];
+    var W = active.reduce(function (a, r) { return a + r.w; }, 0) || 1;
+    var count = active.length;
+    var splitFee = count >= 3 ? 3 : count === 2 ? 2 : 0;
+    var maxP = active.reduce(function (a, r) { return Math.max(a, r.e.p); }, 0);
+    var useMax = $("rule").value === "max";
+
+    rows.forEach(function (r) {
+      var on = active.indexOf(r) >= 0 || (active.length === 1 && active[0].n === r.n);
+      var share = on ? (active.filter(function (a) { return a.n === r.n; })[0].w / W) : 0;
+      $("mo" + r.n).textContent = Math.round(share * 100) + "%";
+      $("mg" + r.n).textContent = on ? Math.round(share * adults) : "—";
+      $("mp" + r.n).textContent = r.e ? fmt.format(useMax && on ? maxP : r.e.p) : "—";
+    });
+
+    var entreeRate = 0, splitRate = 0;
+    active.forEach(function (r) {
+      var share = r.w / W;
+      entreeRate += share * (useMax ? maxP : r.e.p);
+      if (!r.e.combo) splitRate += share * splitFee;
+    });
+    var addOns = parseFloat($("hors").value) + parseFloat($("bar").value);
+    var rate = entreeRate + splitRate + addOns;
+    var fb = rate * adults + KID * k + VENDOR * v;
+    var sc = fb * 0.20, tax = (fb + sc) * 0.10;
+    var cer = $("cer").checked ? 1750 : 0;
+    var patio = $("patio").checked ? 800 : 0;
+    var bartenders = Math.ceil(g / 100);
+    var tip = $("tip").checked ? 250 * bartenders : 0;
+    var total = fb + sc + tax + cer + patio + tip;
+    var out = [
+      ["Average entrée price", fmt.format(entreeRate)],
+      ["Split menu fee (" + count + " entrée" + (count === 1 ? "" : "s") + ")", fmt.format(splitRate)],
+      ["Hors d'oeuvres and bar upgrades", fmt.format(addOns)],
+      ["Per-person rate (" + adults + " adults)", fmt.format(rate)],
+      ["Food and beverage subtotal", fmt.format(fb)],
+      ["Service charge, 20%", fmt.format(sc)],
+      ["Tax, 10%", fmt.format(tax)],
+      ["Ceremony package", fmt.format(cer)],
+      ["Private patio lawn", fmt.format(patio)],
+      ['"No tip jar" fee (' + bartenders + " bartenders)", fmt.format(tip)]
+    ].map(function (r) { return "<tr><th>" + r[0] + '</th><td class="r">' + r[1] + "</td></tr>"; });
+    out.push('<tr class="total"><th>Estimated total</th><td class="r">' + fmt.format(total) + "</td></tr>");
+    out.push('<tr><th>Per guest</th><td class="r">' + fmt.format(total / g) + "</td></tr>");
+    out.push('<tr><th>Saturday F&amp;B minimum ($16,000)</th><td class="r">' + (fb >= 16000 ? "Met" : "Short by " + fmt.format(16000 - fb)) + "</td></tr>");
+    $("calc-body").innerHTML = out.join("");
+  }
+  document.querySelector("#estimator").addEventListener("input", render);
+  document.querySelector("#estimator").addEventListener("change", render);
+  render();
+})();
+</script>
