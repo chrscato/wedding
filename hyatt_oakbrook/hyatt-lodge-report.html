@@ -81,6 +81,37 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   .toc ol { columns: 1; }
   .meta th { width: 120px; }
 }
+
+/* Mobile: wide tables scroll with a pinned first column; .stack tables become cards. */
+.tbl { -webkit-overflow-scrolling: touch; }
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .doc { padding-block: 24px 48px; }
+  h1 { font-size: 1.5rem; }
+  .meta th { width: 100px; }
+  .meta th, .meta td { display: block; width: auto; padding: 2px 0; }
+  .meta td { padding-bottom: 8px; }
+  .calc { padding: 12px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .field input[type="number"], .field select, .mix select { font-size: 16px; padding: 8px 10px; min-height: 42px; }
+  .checks label { padding: 4px 0; }
+  .checks input { width: 18px; height: 18px; }
+  table.wide { min-width: 560px; }
+  table.wide tbody th:first-child, table.wide tbody td:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; box-shadow: 1px 0 0 var(--rule); }
+  table.wide thead th:first-child { position: sticky; left: 0; background: var(--head); z-index: 2; }
+  table.wide tr.total th:first-child { background: var(--head); }
+  .tbl.scrolls::after { content: "Swipe sideways to see all columns"; display: block; font-size: 0.75rem; color: var(--muted); padding-top: 4px; }
+
+  table.stack, table.stack tbody, table.stack tr, table.stack td, table.stack th { display: block; width: 100%; }
+  table.stack thead { display: none; }
+  table.stack tr { border: 1px solid var(--rule); margin-bottom: 10px; padding: 8px 12px; }
+  table.stack td, table.stack th { border: 0; padding: 4px 0; text-align: left; white-space: normal; }
+  table.stack td.r { text-align: left; }
+  table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .mix select { min-width: 0; }
+  .mix .share { min-width: 0; }
+  .mix input[type="range"] { height: 28px; }
+}
 </style>
 
 <div class="doc">
@@ -195,7 +226,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     </div>
     <h3>Entrée mix (adult guests)</h3>
     <p class="small">Choose up to three entrées and drag each slider to set its share of guests. Shares are scaled to add up to 100%. Set a row to "Not offered" to drop it.</p>
-    <div class="tbl"><table class="data mix">
+    <div class="tbl"><table class="data mix stack">
       <thead><tr><th>Entrée</th><th>Share</th><th class="r">Guests</th><th class="r">Upcharge / pp</th></tr></thead>
       <tbody id="mix-body"></tbody>
     </table></div>
@@ -231,7 +262,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 
 <section id="open">
   <h2>4. Open items</h2>
-  <div class="tbl"><table class="data">
+  <div class="tbl"><table class="data stack">
     <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Action</th></tr></thead>
     <tbody>
       <tr><td>1</td><td>Quote header</td><td>All three quotes say "Cathey Wedding" with no valid date.</td><td>Correct before contract</td></tr>
@@ -463,10 +494,10 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     }).join("");
     $("mix-body").innerHTML = pk.defaults.map(function (d, i) {
       var n = i + 1;
-      return '<tr><td><select id="me' + n + '" aria-label="Entrée ' + n + '">' + opts + "</select></td>" +
-        '<td><div class="share"><input type="range" id="ms' + n + '" min="0" max="100" step="5" value="' + d[1] + '" aria-label="Entrée ' + n + ' share">' +
+      return '<tr><td data-label="Entrée"><select id="me' + n + '" aria-label="Entrée ' + n + '">' + opts + "</select></td>" +
+        '<td data-label="Share"><div class="share"><input type="range" id="ms' + n + '" min="0" max="100" step="5" value="' + d[1] + '" aria-label="Entrée ' + n + ' share">' +
         '<output id="mo' + n + '"></output></div></td>' +
-        '<td class="r" id="mg' + n + '"></td><td class="r" id="mp' + n + '"></td></tr>';
+        '<td class="r" data-label="Guests" id="mg' + n + '"></td><td class="r" data-label="Upcharge / pp" id="mp' + n + '"></td></tr>';
     }).join("");
     pk.defaults.forEach(function (d, i) { $("me" + (i + 1)).value = String(d[0]); });
 
@@ -534,5 +565,27 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   document.querySelector("#estimator").addEventListener("change", render);
   buildMix();
   render();
+})();
+</script>
+<script>
+/* Label table cells for the stacked mobile layout; mark wide tables so they scroll with a pinned first column. */
+(function () {
+  function prep() {
+    document.querySelectorAll("table.data").forEach(function (t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent.trim(); });
+      if (t.classList.contains("stack")) {
+        t.querySelectorAll("tbody tr").forEach(function (tr) {
+          Array.prototype.forEach.call(tr.children, function (cell, i) {
+            if (!cell.hasAttribute("data-label") && heads[i]) cell.setAttribute("data-label", heads[i]);
+          });
+        });
+      } else if (heads.length >= 4) {
+        t.classList.add("wide");
+        if (t.parentElement.classList.contains("tbl")) t.parentElement.classList.add("scrolls");
+      }
+    });
+  }
+  prep();
+  new MutationObserver(prep).observe(document.body, { childList: true, subtree: true });
 })();
 </script>
