@@ -153,14 +153,14 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   <div class="tbl"><table class="data">
     <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
     <tbody>
-      <tr><th>Chicken-led menu, 3 entrée choices</th><td class="r">$123</td><td class="r">$34,222</td><td class="r">$36,657</td><td class="r">$38,281</td></tr>
-      <tr><th>50% chicken Marsala / 50% filet</th><td class="r">$134.50</td><td class="r">$37,258</td><td class="r">$39,921</td><td class="r">$41,696</td></tr>
-      <tr><th>Filet, 3 entrée choices</th><td class="r">$147</td><td class="r">$40,558</td><td class="r">$43,469</td><td class="r">$45,409</td></tr>
+      <tr><th>Chicken-led menu, 3 entrée choices</th><td class="r">$123</td><td class="r">$32,472</td><td class="r">$34,907</td><td class="r">$36,531</td></tr>
+      <tr><th>50% chicken Marsala / 50% filet</th><td class="r">$134.50</td><td class="r">$35,508</td><td class="r">$38,171</td><td class="r">$39,946</td></tr>
+      <tr><th>Filet, 3 entrée choices</th><td class="r">$147</td><td class="r">$38,808</td><td class="r">$41,719</td><td class="r">$43,659</td></tr>
     </tbody>
   </table></div>
   <ul>
-    <li>All scenarios include the Classic bar, 3 hors d'oeuvres and the $1,750 ceremony package. The 50/50 row assumes each guest pays for their own entrée; if Makray charges everyone the filet price, the cost is close to the filet row.</li>
-    <li>For reference, Hyatt Lodge's Classic quote at 215 guests is $49,867, which includes room rental but no ceremony fee.</li>
+    <li>All scenarios include the Classic bar and 3 hors d'oeuvres. They leave out the $1,750 ceremony package because we're not holding the ceremony there. The 50/50 row assumes each guest pays for their own entrée; if Makray charges everyone the filet price, the cost is close to the filet row.</li>
+    <li>For reference, Hyatt Lodge's Classic quote at 215 guests is $49,867, which includes room rental.</li>
     <li>The Saturday F&amp;B minimum of $16,000 is well below either scenario.</li>
     <li>Final payment must be made by cashier's check or cash.</li>
   </ul>
@@ -174,6 +174,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
         <label for="guests">Total guests</label>
         <input type="number" id="guests" min="1" max="400" value="215">
         <span class="hint">Expected range is 200–225.</span>
+      </div>
+      <div class="field">
+        <label for="inc">Annual price increase to 2028 (%)</label>
+        <input type="number" id="inc" min="0" max="15" step="0.5" value="0">
+        <span class="hint">Prices are from the 2026 package. Use this to project 2028 prices.</span>
       </div>
       <div class="field">
         <label for="rule">Split menu pricing</label>
@@ -212,7 +217,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       <div class="field">
         <span style="font-weight:500;font-size:0.85rem">Other charges</span>
         <div class="checks">
-          <label for="cer"><input type="checkbox" id="cer" checked> Ceremony package, $1,750</label>
+          <label for="cer"><input type="checkbox" id="cer"> Ceremony package, $1,750</label>
           <label for="patio"><input type="checkbox" id="patio"> Private patio lawn, $800</label>
           <label for="tip"><input type="checkbox" id="tip"> "No tip jar" fee, $250 per bartender</label>
         </div>
@@ -560,6 +565,9 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     var addOns = parseFloat($("hors").value) + parseFloat($("bar").value);
     var rate = entreeRate + splitRate + addOns;
     var fb = rate * adults + KID * k + VENDOR * v;
+    var pct = parseFloat($("inc").value) || 0, YEARS = 2;
+    var inc = fb * (Math.pow(1 + pct / 100, YEARS) - 1);
+    fb += inc;
     var sc = fb * 0.20, tax = (fb + sc) * 0.10;
     var cer = $("cer").checked ? 1750 : 0;
     var patio = $("patio").checked ? 800 : 0;
@@ -571,6 +579,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       ["Split menu fee (" + count + " entrée" + (count === 1 ? "" : "s") + ")", fmt.format(splitRate)],
       ["Hors d'oeuvres and bar upgrades", fmt.format(addOns)],
       ["Per-person rate (" + adults + " adults)", fmt.format(rate)],
+      ["Projected increase to 2028 (" + pct + "%/yr for " + YEARS + " yr)", fmt.format(inc)],
       ["Food and beverage subtotal", fmt.format(fb)],
       ["Service charge, 20%", fmt.format(sc)],
       ["Tax, 10%", fmt.format(tax)],

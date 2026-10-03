@@ -161,7 +161,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <li><strong>Capacity is the deciding issue:</strong> Windsor Hall seats 200 with a dance floor. Our 215 planning number doesn't fit as stated, so the 215 and 225 columns only apply if the inn can make a larger layout work.</li>
     <li>The <strong>wedding cake isn't included</strong>; the client provides it. Budget for an outside bakery.</li>
     <li>No rental fee, ceremony fee, F&amp;B minimum or deposit amount is listed. The 4-hour bar, 4 hors d'oeuvres, soup and salad are included, and so are valet parking and bartenders.</li>
-    <li>For comparison, at 215 guests Makray runs $36,657 to $43,469, Royal Melbourne $36,411 to $42,643, Lincolnshire $37,864 to $65,381, and Hyatt Lodge's Classic quote is $49,867.</li>
+    <li>For comparison, at 215 guests Makray runs $34,907 to $41,719, Royal Melbourne $35,411 to $41,643, Lincolnshire $34,341 to $59,509, and Hyatt Lodge's Classic quote is $49,867.</li>
   </ul>
 </section>
 
@@ -173,6 +173,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
         <label for="guests">Total guests</label>
         <input type="number" id="guests" min="1" max="400" value="200">
         <span class="hint">Windsor Hall seats 200 with a dance floor.</span>
+      </div>
+      <div class="field">
+        <label for="inc">Annual price increase to 2028 (%)</label>
+        <input type="number" id="inc" min="0" max="15" step="0.5" value="0">
+        <span class="hint">Prices are from the 2025 package. Use this to project 2028 prices.</span>
       </div>
       <div class="field">
         <label for="rule">Split menu pricing</label>
@@ -458,6 +463,9 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     var rate = entreeRate + barRate + courseRate;
     var hors = int($("cold"), 0, 50) * 100 + int($("hot"), 0, 50) * 135;
     var fb = rate * g + hors;
+    var pct = parseFloat($("inc").value) || 0, YEARS = 3;
+    var inc = fb * (Math.pow(1 + pct / 100, YEARS) - 1);
+    fb += inc;
     var grat = fb * 0.22;
     var tax = ($("taxmode").value === "all" ? fb + grat : fb) * 0.08;
     var cake = int($("cake"), 0, 20000);
@@ -468,6 +476,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       ["First course and salad upgrades", fmt.format(courseRate)],
       ["Per-person rate (" + g + " guests)", fmt.format(rate)],
       ["Upgrade hors d'oeuvres", fmt.format(hors)],
+      ["Projected increase to 2028 (" + pct + "%/yr for " + YEARS + " yr)", fmt.format(inc)],
       ["Food and beverage subtotal", fmt.format(fb)],
       ["Gratuity, 22%", fmt.format(grat)],
       ["Sales tax, 8%", fmt.format(tax)],

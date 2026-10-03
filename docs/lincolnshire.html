@@ -155,16 +155,16 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   <div class="tbl"><table class="data">
     <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
     <tbody>
-      <tr><th>Rustic Glamour, chicken, raised to the minimum</th><td class="r">$107</td><td class="r">$37,618</td><td class="r">$37,864</td><td class="r">$38,028</td></tr>
-      <tr><th>Handcrafted Romance, salmon prevails, late-night snack</th><td class="r">$134</td><td class="r">$40,076</td><td class="r">$43,067</td><td class="r">$45,061</td></tr>
-      <tr><th>Genuine Indulgence, filet, sweets, late night, extra bar hour</th><td class="r">$202</td><td class="r">$60,834</td><td class="r">$65,381</td><td class="r">$68,413</td></tr>
+      <tr><th>Rustic Glamour, chicken, raised to the minimum</th><td class="r">$107</td><td class="r">$34,341</td><td class="r">$34,341</td><td class="r">$34,341</td></tr>
+      <tr><th>Handcrafted Romance, salmon prevails, late-night snack</th><td class="r">$134</td><td class="r">$36,799</td><td class="r">$39,544</td><td class="r">$41,374</td></tr>
+      <tr><th>Genuine Indulgence, filet, sweets, late night, extra bar hour</th><td class="r">$202</td><td class="r">$55,371</td><td class="r">$59,509</td><td class="r">$62,268</td></tr>
     </tbody>
   </table></div>
   <ul>
-    <li>All scenarios include the ceremony ($12/pp, $1,000 minimum, with service charge and tax) and the $200 DJ power box. The top row's food and beverage falls short of $25,000, so it's billed at the minimum.</li>
+    <li>All scenarios include the $200 DJ power box and leave out the ceremony ($12/pp), since we're not holding it there. The top row's food and beverage falls short of $25,000 at every count up to about 233 guests, so it's billed at the minimum and doesn't change with the guest count.</li>
     <li>Because of the minimum, upgrading from Rustic Glamour to Handcrafted Romance costs only about $200 all-in at 215 guests. That buys a 4th hors d'oeuvre, the Top Shelf bar and better linens.</li>
     <li><strong>Capacity:</strong> the Lakeside Pavilion seats 220. A 225-guest list doesn't fit as stated, and 215 fills 98% of it before the dance floor. The Grand Ballroom and Grand Marquee fit, but their minimums are unknown.</li>
-    <li>For comparison, at 215 guests Makray runs $36,657 to $43,469, Royal Melbourne $36,411 to $42,643, and Hyatt Lodge's Classic quote is $49,867.</li>
+    <li>For comparison, at 215 guests Makray runs $34,907 to $41,719, Royal Melbourne $35,411 to $41,643, and Hyatt Lodge's Classic quote is $49,867.</li>
   </ul>
 </section>
 
@@ -176,6 +176,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
         <label for="guests">Total guests</label>
         <input type="number" id="guests" min="1" max="400" value="215">
         <span class="hint">Expected range is 200–225. The Lakeside Pavilion seats 220.</span>
+      </div>
+      <div class="field">
+        <label for="inc">Annual price increase to 2028 (%)</label>
+        <input type="number" id="inc" min="0" max="15" step="0.5" value="0">
+        <span class="hint">Menu prices are 2026; the minimum is a 2027 figure. Use this to project 2028 prices.</span>
       </div>
       <div class="field">
         <label for="pkg">Package</label>
@@ -196,7 +201,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       <div class="field">
         <label for="minimum">F&amp;B minimum ($, before fees)</label>
         <input type="number" id="minimum" min="0" max="100000" step="500" value="25000">
-        <span class="hint">2027 Lakeside Pavilion, from the Aug. 2026 email.</span>
+        <span class="hint">2027 Lakeside Pavilion, from the Aug. 2026 email. The increase field raises it 1 year.</span>
       </div>
       <div class="field">
         <label for="tax">Sales tax</label>
@@ -278,7 +283,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       <div class="field">
         <span style="font-weight:500;font-size:0.85rem">Ceremony and other charges</span>
         <div class="checks">
-          <label for="cer"><input type="checkbox" id="cer" checked> Ceremony, $12/pp ($1,000 min.)</label>
+          <label for="cer"><input type="checkbox" id="cer"> Ceremony, $12/pp ($1,000 min.)</label>
           <label for="cer-bev"><input type="checkbox" id="cer-bev"> Ceremony water and champagne, $8/pp</label>
           <label for="spider"><input type="checkbox" id="spider" checked> DJ/band power box, $200</label>
           <label for="coat"><input type="checkbox" id="coat"> Coat check, $225 per 100 guests</label>
@@ -587,7 +592,10 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     document.querySelectorAll("#estimator input[data-pp]").forEach(function (c) { if (c.checked) extras += parseFloat(c.getAttribute("data-pp")); });
     var rate = entreeRate + barRate + extras;
     var fb = rate * adults + KID * k + VENDOR * v;
-    var minimum = int($("minimum"), 0, 100000);
+    var pct = parseFloat($("inc").value) || 0, YEARS = 2;
+    var inc = fb * (Math.pow(1 + pct / 100, YEARS) - 1);
+    fb += inc;
+    var minimum = int($("minimum"), 0, 100000) * (1 + pct / 100);
     var billedFb = Math.max(fb, minimum);
     var cer = ($("cer").checked ? Math.max(12 * g, 1000) : 0) + ($("cer-bev").checked ? 8 * g : 0);
     var taxRate = parseFloat($("tax").value);
@@ -600,6 +608,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       ["Extra bar hours and wine upgrade", fmt.format(barRate)],
       ["Other add-ons", fmt.format(extras)],
       ["Per-person rate (" + adults + " adults)", fmt.format(rate)],
+      ["Projected increase to 2028 (" + pct + "%/yr for " + YEARS + " yr)", fmt.format(inc)],
       ["Food and beverage ordered", fmt.format(fb)],
       ["Raised to the minimum", fmt.format(billedFb - fb)],
       ["Ceremony", fmt.format(cer)],

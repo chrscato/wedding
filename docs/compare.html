@@ -147,26 +147,22 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 <section id="takeaways">
   <h2>1. Takeaways</h2>
   <ul>
-    <li><strong>Makray and Royal Melbourne are the lowest-cost options</strong>, both about $36–43k at 215 guests. Lincolnshire is close at the entry level because its $25,000 minimum barely binds.</li>
+    <li><strong>Makray, Royal Melbourne and Lincolnshire start at about $34–35k</strong> at 215 guests as published. Lincolnshire's entry total is set by its $25,000 minimum, so it doesn't rise with the guest count.</li>
     <li><strong>Hyatt is the most expensive at the entry level</strong> ($49,867 for Classic), but it's the only venue priced for 2028 and the only one with a written quote. The others will likely rise by the time we book.</li>
     <li><strong>Capacity rules some venues in or out.</strong> Deer Path Inn seats 200, below our planning number. Royal Melbourne and Lincolnshire's Lakeside Pavilion seat 220, which fits 215 only tightly and 225 not at all. Hyatt and Makray haven't stated a capacity.</li>
-    <li><strong>The cheapest totals aren't fully comparable.</strong> Deer Path excludes the cake, Hyatt excludes the ceremony fee, and Lincolnshire's minimum comes from an email rather than its package.</li>
+    <li><strong>The cheapest totals aren't fully comparable.</strong> Deer Path excludes the cake, and Lincolnshire's minimum comes from an email rather than its package.</li>
   </ul>
 </section>
 
 <section id="cost">
   <h2>2. Cost at 215 guests</h2>
-  <p>Each venue's own report has three scenarios: an entry menu, a mid menu and a premium menu. Totals are all-in, including service charge and tax. Package years differ, so you can project the older packages to 2028 with an assumed annual increase.</p>
+  <p>Each venue's own report has three scenarios: an entry menu, a mid menu and a premium menu. Totals are all-in, including service charge and tax. Package years differ, so you can project the older packages to 2028 with an assumed annual increase. Totals cover the reception only; ceremony fees are left out because the ceremony won't be at the venue.</p>
   <div class="calc">
     <div class="fields">
       <div class="field">
-        <label for="rate">Assumed annual price increase to 2028</label>
-        <select id="rate">
-          <option value="0" selected>None (as published)</option>
-          <option value="0.03">3% per year</option>
-          <option value="0.05">5% per year</option>
-        </select>
-        <span class="hint">Applied from each package's year to 2028. Hyatt is already at 2028 rates.</span>
+        <label for="rate">Annual price increase to 2028 (%)</label>
+        <input type="number" id="rate" min="0" max="15" step="0.5" value="0">
+        <span class="hint">Applied from each package's year to 2028; 0 shows prices as published. Hyatt is already at 2028 rates. Updates both tables below.</span>
       </div>
     </div>
   </div>
@@ -177,29 +173,23 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   <div class="tbl"><table class="data">
     <thead><tr><th>Venue</th><th>Entry</th><th>Mid</th><th>Premium</th><th>Included / excluded</th></tr></thead>
     <tbody>
-      <tr><th>Hyatt Lodge</th><td>Classic package, $160</td><td>Fairy-Tale package, $190</td><td>Legend package, $225</td><td>Includes $4,041 ballroom rental and cake; excludes any ceremony fee</td></tr>
-      <tr><th>Makray</th><td>Chicken-led, 3 entrées, $123 (incl. +$3 split fee)</td><td>50% chicken / 50% filet, $134.50 (incl. +$2 split fee)</td><td>Filet, 3 entrées, $147 (incl. +$3 split fee)</td><td>Includes the $1,750 ceremony and cake</td></tr>
-      <tr><th>Royal Melbourne</th><td>Chicken or salmon, $125</td><td>Even split: chicken / short rib / filet, $133.67</td><td>Filet and crab cake, $147</td><td>Includes the $1,000 ceremony and cake</td></tr>
-      <tr><th>Lincolnshire</th><td>Rustic Glamour chicken, billed at the $25,000 minimum</td><td>Handcrafted Romance, salmon prevails, late night</td><td>Genuine Indulgence filet plus add-ons</td><td>Includes the $12/pp ceremony, cake and $200 power box</td></tr>
-      <tr><th>Deer Path Inn</th><td>Chicken or vegetarian, $150</td><td>Even split: chicken / salmon / filet, $166.67</td><td>Filet mignon, $185</td><td>Excludes the cake (client provides) and any ceremony fee; doesn't fit 215</td></tr>
+      <tr><th>Hyatt Lodge</th><td>Classic package, $160</td><td>Fairy-Tale package, $190</td><td>Legend package, $225</td><td>Includes the $4,041 ballroom rental and cake</td></tr>
+      <tr><th>Makray</th><td>Chicken-led, 3 entrées, $123 (incl. +$3 split fee)</td><td>50% chicken / 50% filet, $134.50 (incl. +$2 split fee)</td><td>Filet, 3 entrées, $147 (incl. +$3 split fee)</td><td>Includes cake</td></tr>
+      <tr><th>Royal Melbourne</th><td>Chicken or salmon, $125</td><td>Even split: chicken / short rib / filet, $133.67</td><td>Filet and crab cake, $147</td><td>Includes cake</td></tr>
+      <tr><th>Lincolnshire</th><td>Rustic Glamour chicken, billed at the $25,000 minimum</td><td>Handcrafted Romance, salmon prevails, late night</td><td>Genuine Indulgence filet plus add-ons</td><td>Includes cake and the $200 power box</td></tr>
+      <tr><th>Deer Path Inn</th><td>Chicken or vegetarian, $150</td><td>Even split: chicken / salmon / filet, $166.67</td><td>Filet mignon, $185</td><td>Excludes the cake (client provides); doesn't fit 215</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <section id="range">
   <h2>3. Cost across the guest range</h2>
-  <p>Entry scenario for each venue, as published. A dash means the count is over the venue's stated capacity.</p>
-  <div class="tbl"><table class="data">
+  <p>Entry scenario for each venue, with the price increase above applied. A dash means the count is over the venue's stated capacity.</p>
+  <div class="tbl"><table class="data" id="range-table">
     <thead><tr><th>Venue</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th><th class="r">Per extra guest</th></tr></thead>
-    <tbody>
-      <tr><th>Hyatt Lodge (Classic)</th><td class="r">$46,669</td><td class="r">$49,867</td><td class="r">$51,998</td><td class="r">~$213</td></tr>
-      <tr><th>Makray</th><td class="r">$34,222</td><td class="r">$36,657</td><td class="r">$38,281</td><td class="r">~$162</td></tr>
-      <tr><th>Royal Melbourne</th><td class="r">$33,940</td><td class="r">$36,411</td><td class="r">—</td><td class="r">~$165</td></tr>
-      <tr><th>Lincolnshire</th><td class="r">$37,618</td><td class="r">$37,864</td><td class="r">—</td><td class="r">~$16*</td></tr>
-      <tr><th>Deer Path Inn</th><td class="r">$39,000</td><td class="r">—</td><td class="r">—</td><td class="r">~$195</td></tr>
-    </tbody>
+    <tbody></tbody>
   </table></div>
-  <p class="small">*At Lincolnshire's entry level, the F&amp;B minimum covers the food, so extra guests only add the ceremony fee until the food total passes $25,000 (about 233 guests at $107). The Royal Melbourne and Lincolnshire figures at 225 would be $38,058 and $38,028 if the room could hold them; Deer Path's would be $41,925 at 215 and $43,875 at 225.</p>
+  <p class="small">*At Lincolnshire's entry level, the $25,000 minimum covers the food until about 233 guests at $107, so extra guests add nothing until then.</p>
 </section>
 
 <section id="capacity">
@@ -220,13 +210,13 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 <section id="terms">
   <h2>5. Pricing terms</h2>
   <div class="tbl"><table class="data">
-    <thead><tr><th>Venue</th><th>Prices for</th><th class="r">Per person</th><th>Service charge</th><th>Tax</th><th class="r">All-in multiplier</th><th>Ceremony</th><th>Room rental</th><th>F&amp;B minimum</th></tr></thead>
+    <thead><tr><th>Venue</th><th>Prices for</th><th class="r">Per person</th><th>Service charge</th><th>Tax</th><th class="r">All-in multiplier</th><th>Room rental</th><th>F&amp;B minimum</th></tr></thead>
     <tbody>
-      <tr><th>Hyatt Lodge</th><td>2028 (quote)</td><td class="r">$160–$225</td><td>19% + 6% admin fee</td><td>7.75% on the admin fee</td><td class="r">~1.33×</td><td>$2,000 (guide); unclear</td><td>$3,000 + fees ($4,041)</td><td>Not stated</td></tr>
-      <tr><th>Makray</th><td>2026 (≤5% increase)</td><td class="r">$116.50–$144</td><td>20%</td><td>10%, incl. service</td><td class="r">1.32×</td><td>$1,750 (+$800 private lawn)</td><td>None</td><td>$16,000 Saturday</td></tr>
-      <tr><th>Royal Melbourne</th><td>2027</td><td class="r">$120–$147</td><td>22%, taxable</td><td>8%</td><td class="r">1.3176×</td><td>$1,000</td><td>None stated</td><td>Varies; not stated</td></tr>
-      <tr><th>Lincolnshire</th><td>2026 (annual increase)</td><td class="r">$107–$157</td><td>25%, taxable</td><td>9.25% (or 9%)</td><td class="r">1.3656×</td><td>$12/pp, $1,000 min.</td><td>None (per email)</td><td>$25,000 (2027, per email)</td></tr>
-      <tr><th>Deer Path Inn</th><td>2025</td><td class="r">$150–$225</td><td>22% gratuity</td><td>8%</td><td class="r">1.30× (or 1.3176×)</td><td>Not stated</td><td>Not stated</td><td>Not stated</td></tr>
+      <tr><th>Hyatt Lodge</th><td>2028 (quote)</td><td class="r">$160–$225</td><td>19% + 6% admin fee</td><td>7.75% on the admin fee</td><td class="r">~1.33×</td><td>$3,000 + fees ($4,041)</td><td>Not stated</td></tr>
+      <tr><th>Makray</th><td>2026 (≤5% increase)</td><td class="r">$116.50–$144</td><td>20%</td><td>10%, incl. service</td><td class="r">1.32×</td><td>None</td><td>$16,000 Saturday</td></tr>
+      <tr><th>Royal Melbourne</th><td>2027</td><td class="r">$120–$147</td><td>22%, taxable</td><td>8%</td><td class="r">1.3176×</td><td>None stated</td><td>Varies; not stated</td></tr>
+      <tr><th>Lincolnshire</th><td>2026 (annual increase)</td><td class="r">$107–$157</td><td>25%, taxable</td><td>9.25% (or 9%)</td><td class="r">1.3656×</td><td>None (per email)</td><td>$25,000 (2027, per email)</td></tr>
+      <tr><th>Deer Path Inn</th><td>2025</td><td class="r">$150–$225</td><td>22% gratuity</td><td>8%</td><td class="r">1.30× (or 1.3176×)</td><td>Not stated</td><td>Not stated</td></tr>
     </tbody>
   </table></div>
   <div class="tbl"><table class="data">
@@ -274,11 +264,11 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   <div class="tbl"><table class="data stack">
     <thead><tr><th>Venue</th><th>Ask first</th></tr></thead>
     <tbody>
-      <tr><td>Hyatt Lodge</td><td>Prairie Ballroom capacity at 225; whether the $3,000 rental is the ceremony fee or a ceremony costs more; the corrected quote (wrong name and date)</td></tr>
+      <tr><td>Hyatt Lodge</td><td>Prairie Ballroom capacity at 225; whether the $3,000 room rental still applies without a ceremony; the corrected quote (wrong name and date)</td></tr>
       <tr><td>Makray</td><td>Ballroom capacity at 225; 2028 pricing; whether split-menu pricing uses each entrée or the highest</td></tr>
       <tr><td>Royal Melbourne</td><td>Whether 215–225 fits a 220-seat room with a dance floor; the F&amp;B minimum for our date; the bridal suite fee</td></tr>
       <tr><td>Lincolnshire</td><td>Lakeside floor plan for 215–225, or the Grand Marquee minimum; the $25,000 minimum and no-rental-fee in writing; 2028 pricing</td></tr>
-      <tr><td>Deer Path Inn</td><td>Whether any layout seats more than 200; 2027/28 pricing; ceremony, rental and minimum fees</td></tr>
+      <tr><td>Deer Path Inn</td><td>Whether any layout seats more than 200; 2027/28 pricing; rental fee and minimum</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -292,24 +282,31 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 <script>
 (function () {
   var VENUES = [
-    { n: "Hyatt Lodge", href: "hyatt.html", y: 2028, v: [49867, 58459, 68483] },
-    { n: "Makray", href: "makray.html", y: 2026, v: [36657, 39921, 43469] },
-    { n: "Royal Melbourne", href: "royal-melbourne.html", y: 2027, v: [36411, 38866, 42643] },
-    { n: "Lincolnshire", href: "lincolnshire.html", y: 2026, v: [37864, 43067, 65381] },
-    { n: "Deer Path Inn", href: "deer-path-inn.html", y: 2025, v: [41925, 46583, 51708], note: "over capacity" }
+    { n: "Hyatt Lodge", href: "hyatt.html", y: 2028, v: [49867, 58459, 68483], r: [46669, 49867, 51998], extra: 213 },
+    { n: "Makray", href: "makray.html", y: 2026, v: [34907, 38171, 41719], r: [32472, 34907, 36531], extra: 162 },
+    { n: "Royal Melbourne", href: "royal-melbourne.html", y: 2027, v: [35411, 37866, 41643], r: [32940, 35411, 37058], extra: 165, cap: 220 },
+    { n: "Lincolnshire", href: "lincolnshire.html", y: 2026, v: [34341, 39544, 59509], r: [34341, 34341, 34341], extra: 0, cap: 220, star: true },
+    { n: "Deer Path Inn", href: "deer-path-inn.html", y: 2025, v: [41925, 46583, 51708], r: [39000, 41925, 43875], extra: 195, cap: 200, note: "over capacity at 215" }
   ];
+  var COUNTS = [200, 215, 225];
   var fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
-  var sel = document.getElementById("rate");
+  var inp = document.getElementById("rate");
   function render() {
-    var r = parseFloat(sel.value);
-    var rows = VENUES.map(function (x) { var f = Math.pow(1 + r, 2028 - x.y); return { x: x, v: x.v.map(function (n) { return n * f; }) }; });
+    var r = Math.max(0, parseFloat(inp.value) || 0) / 100;
+    var rows = VENUES.map(function (x) { var f = Math.pow(1 + r, 2028 - x.y); return { x: x, f: f, v: x.v.map(function (n) { return n * f; }) }; });
     var low = Math.min.apply(null, rows.map(function (o) { return o.v[0]; }));
+    var name = function (x) { return '<th><a href="' + x.href + '">' + x.n + "</a>" + (x.note ? ' <span class="small">(' + x.note + ")</span>" : "") + "</th>"; };
     document.querySelector("#cost-table tbody").innerHTML = rows.map(function (o) {
-      return '<tr><th><a href="' + o.x.href + '">' + o.x.n + "</a>" + (o.x.note ? ' <span class="small">(' + o.x.note + ")</span>" : "") + "</th><td>" + o.x.y + (r && o.x.y < 2028 ? " → 2028" : "") + "</td>" +
+      return "<tr>" + name(o.x) + "<td>" + o.x.y + (r && o.x.y < 2028 ? " → 2028" : "") + "</td>" +
         o.v.map(function (n, i) { return '<td class="r">' + (i === 0 && n === low ? "<strong>" + fmt.format(n) + "</strong>" : fmt.format(n)) + "</td>"; }).join("") + "</tr>";
     }).join("");
+    document.querySelector("#range-table tbody").innerHTML = rows.map(function (o) {
+      return '<tr><th><a href="' + o.x.href + '">' + o.x.n + "</a></th>" +
+        o.x.r.map(function (n, i) { return '<td class="r">' + (o.x.cap && COUNTS[i] > o.x.cap ? "—" : fmt.format(n * o.f)) + "</td>"; }).join("") +
+        '<td class="r">~' + fmt.format(o.x.extra * o.f) + (o.x.star ? "*" : "") + "</td></tr>";
+    }).join("");
   }
-  sel.addEventListener("change", render);
+  inp.addEventListener("input", render);
   render();
 })();
 </script>
