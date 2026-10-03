@@ -244,6 +244,8 @@ The club has a **strict no-shot policy**.
 
 ## Quick estimate (215 guests, before add-ons)
 
+> **Update 2026-10-03:** the ceremony won't be held at the venue. Without the $1,000 ceremony set-up, the 215-guest totals are $35,411 / $37,866 / $41,643. The report and comparison page use these figures.
+
 | Scenario | Per person | F&B subtotal | All-in (×1.3176) | + Ceremony | Total |
 |---|---|---|---|---|---|
 | All chicken / salmon | $125 | $26,875 | $35,411 | $1,000 | **$36,411** |

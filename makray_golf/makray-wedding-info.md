@@ -254,6 +254,8 @@ You choose one soup or salad; it's +$3.50/pp to serve both.
 
 ## Rough estimate at our headcount
 
+> **Update 2026-10-03:** the ceremony won't be held at the venue. Without the $1,750 ceremony package, the totals are $32,472 / $34,907 / $36,531 (chicken-led) and $38,808 / $41,719 / $43,659 (filet). The report and comparison page use these figures.
+
 This assumes 3 entrée choices (+$3/pp split fee), the Classic bar, 3 hors d'oeuvres, and a $1,750 ceremony. It doesn't include the "no tip jar" fee. Tax treatment of the ceremony fee is unknown, so it's added flat.
 
 | Entrée level | 200 guests | 215 guests | 225 guests |

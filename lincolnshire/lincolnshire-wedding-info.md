@@ -374,6 +374,8 @@ The list doesn't say whether these vendors are required or just suggestions.
 
 ## Quick estimate (215 guests, Lakeside Pavilion)
 
+> **Update 2026-10-03:** the ceremony won't be held at the venue. Without the ceremony ($12/pp and the high scenario's $8/pp station), the 215-guest totals are $34,341 / $39,544 / $59,509. The report and comparison page use these figures.
+
 | Scenario | Per person (before fees) | F&B + ceremony subtotal | All-in (×1.365625) | + Spider box | Total |
 |---|---|---|---|---|---|
 | **Low:** Rustic Glamour, chicken/veg ($107). F&B raised to the $25,000 minimum. Ceremony $12. | $107 + $12 | $25,000 + $2,580 = $27,580 | $37,664 | $200 | **$37,864** |
