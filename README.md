@@ -9,6 +9,7 @@ Site: https://chrscato.github.io/wedding/
 - `royal_melbourne/` – Royal Melbourne Country Club notes and report source
 - `lincolnshire/` – Lincolnshire Marriott Resort (Lakeside Pavilion) notes and report source
 - `deer_path_inn/` – Deer Path Inn (Windsor Hall) notes and report source
+- `comparison/` – side-by-side comparison of all venues
 - `docs/` – the published GitHub Pages site (generated)
 
 After editing a report, run `python publish.py` and commit `docs/`.
