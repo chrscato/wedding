@@ -1,0 +1,499 @@
+<title>Deer Path Inn Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single 880px document column; title block, metadata, contents, then numbered sections with ruled tables. Light only by design. */
+:root {
+  --paper: #ffffff;
+  --ink: #1b1f24;
+  --muted: #5a6370;
+  --rule: #d5d9de;
+  --head: #f3f5f7;
+  --accent: #1f3b5c;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 14.5px; line-height: 1.55; }
+.doc { max-width: 880px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; }
+h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); text-wrap: balance; }
+h3 { font-size: 0.95rem; font-weight: 600; margin: 18px 0 8px; }
+p { margin: 0 0 10px; max-width: 72ch; }
+ul { margin: 0 0 10px; padding-left: 1.3em; }
+li { margin-bottom: 3px; }
+a { color: var(--accent); }
+.sub { color: var(--muted); margin: 0 0 20px; }
+.num, td.r, th.r { font-variant-numeric: tabular-nums; }
+.small { font-size: 0.85rem; color: var(--muted); }
+
+.meta { width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 0.88rem; }
+.meta th { width: 160px; text-align: left; font-weight: 500; color: var(--muted); padding: 5px 0; vertical-align: top; }
+.meta td { padding: 5px 0; }
+.meta tr { border-top: 1px solid var(--rule); }
+.meta tr:last-child { border-bottom: 1px solid var(--rule); }
+
+.toc { border: 1px solid var(--rule); padding: 14px 18px; margin-bottom: 36px; }
+.toc strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.toc ol { margin: 0; columns: 2; column-gap: 32px; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+section { margin-bottom: 40px; scroll-margin-top: 16px; }
+
+.tbl { overflow-x: auto; margin-bottom: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.data th, .data td { border: 1px solid var(--rule); padding: 6px 10px; text-align: left; vertical-align: top; }
+.data thead th { background: var(--head); font-weight: 600; }
+.data tbody th { font-weight: 400; }
+.data td.r, .data th.r { text-align: right; white-space: nowrap; }
+.data tr.total td, .data tr.total th { font-weight: 600; background: var(--head); }
+
+.calc { border: 1px solid var(--rule); padding: 16px 18px; margin-bottom: 12px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 20px; margin-bottom: 16px; }
+.field { display: grid; gap: 4px; align-content: start; }
+.field label { font-weight: 500; font-size: 0.85rem; }
+.field input[type="number"], .field select { font: inherit; padding: 5px 8px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; font-variant-numeric: tabular-nums; }
+.field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field .hint { font-size: 0.78rem; color: var(--muted); }
+.checks { display: grid; gap: 6px; font-size: 0.88rem; }
+.checks label { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+.checks input { margin-top: 3px; }
+
+.mix select { font: inherit; padding: 4px 6px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; min-width: 200px; }
+.mix .share { display: flex; align-items: center; gap: 10px; min-width: 180px; }
+.mix input[type="range"] { flex: 1; accent-color: var(--accent); }
+.mix output { font-variant-numeric: tabular-nums; width: 3.2em; text-align: right; }
+.mix select:focus-visible, .mix input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.cols > div { min-width: 0; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .cols { grid-template-columns: minmax(0, 1fr); }
+  .toc ol { columns: 1; }
+  .meta th { width: 120px; }
+}
+
+/* Mobile: wide tables scroll with a pinned first column; .stack tables become cards. */
+.tbl { -webkit-overflow-scrolling: touch; }
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .doc { padding-block: 24px 48px; }
+  h1 { font-size: 1.5rem; }
+  .meta th { width: 100px; }
+  .meta th, .meta td { display: block; width: auto; padding: 2px 0; }
+  .meta td { padding-bottom: 8px; }
+  .calc { padding: 12px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .field input[type="number"], .field select, .mix select { font-size: 16px; padding: 8px 10px; min-height: 42px; }
+  .checks label { padding: 4px 0; }
+  .checks input { width: 18px; height: 18px; }
+  table.wide { min-width: 560px; }
+  table.wide tbody th:first-child, table.wide tbody td:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; box-shadow: 1px 0 0 var(--rule); }
+  table.wide thead th:first-child { position: sticky; left: 0; background: var(--head); z-index: 2; }
+  table.wide tr.total th:first-child { background: var(--head); }
+  .tbl.scrolls::after { content: "Swipe sideways to see all columns"; display: block; font-size: 0.75rem; color: var(--muted); padding-top: 4px; }
+
+  table.stack, table.stack tbody, table.stack tr, table.stack td, table.stack th { display: block; width: 100%; }
+  table.stack thead { display: none; }
+  table.stack tr { border: 1px solid var(--rule); margin-bottom: 10px; padding: 8px 12px; }
+  table.stack td, table.stack th { border: 0; padding: 4px 0; text-align: left; white-space: normal; }
+  table.stack td.r { text-align: left; }
+  table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .mix select { min-width: 0; }
+  .mix .share { min-width: 0; }
+  .mix input[type="range"] { height: 28px; }
+}
+</style>
+
+<div class="doc">
+
+<h1>Deer Path Inn</h1>
+<p class="sub">McManus-Cato wedding · Venue evaluation · Windsor Hall</p>
+
+<table class="meta">
+  <tr><th>Venue</th><td>Deer Path Inn, Lake Forest, IL (est. 1929)</td></tr>
+  <tr><th>Contact</th><td>Catering managers; the package names no contact</td></tr>
+  <tr><th>Space</th><td>Windsor Hall: 4,500+ sq ft, divisible into 3 rooms</td></tr>
+  <tr><th>Expected guests</th><td>200–225</td></tr>
+  <tr><th>Pricing basis</th><td>2025 wedding package (no quote yet)</td></tr>
+  <tr><th>Prepared</th><td>October 3, 2026</td></tr>
+</table>
+
+<nav class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#estimator">Cost estimator</a></li>
+    <li><a href="#included">Package inclusions</a></li>
+    <li><a href="#entrees">Entrées and pricing</a></li>
+    <li><a href="#courses">Hors d'oeuvres, soup and salad</a></li>
+    <li><a href="#bar">Bar and wine</a></li>
+    <li><a href="#payment">Deposit and guarantees</a></li>
+    <li><a href="#open">Open items</a></li>
+  </ol>
+</nav>
+
+<section id="summary">
+  <h2>1. Summary</h2>
+  <p>Deer Path Inn sells one all-inclusive package priced per person by entrée, from $150 to $225 before fees. That's the highest base price of the venues so far. A 22% gratuity and 8% sales tax make the real cost 1.30× the menu price, or 1.3176× if the gratuity is also taxed. These figures come from the 2025 package; we don't have a quote yet.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
+    <tbody>
+      <tr><th>Chicken or vegetarian for all</th><td class="r">$150</td><td class="r">$39,000</td><td class="r">$41,925</td><td class="r">$43,875</td></tr>
+      <tr><th>Even split: chicken / salmon / filet</th><td class="r">$166.67</td><td class="r">$43,333</td><td class="r">$46,583</td><td class="r">$48,750</td></tr>
+      <tr><th>Filet mignon for all</th><td class="r">$185</td><td class="r">$48,100</td><td class="r">$51,708</td><td class="r">$54,112</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>Capacity is the deciding issue:</strong> Windsor Hall seats 200 with a dance floor. Our 215 planning number doesn't fit as stated, so the 215 and 225 columns only apply if the inn can make a larger layout work.</li>
+    <li>The <strong>wedding cake isn't included</strong>; the client provides it. Budget for an outside bakery.</li>
+    <li>No rental fee, ceremony fee, F&amp;B minimum or deposit amount is listed. The 4-hour bar, 4 hors d'oeuvres, soup and salad are included, and so are valet parking and bartenders.</li>
+    <li>For comparison, at 215 guests Makray runs $36,657 to $43,469, Royal Melbourne $36,411 to $42,643, Lincolnshire $37,864 to $65,381, and Hyatt Lodge's Classic quote is $49,867.</li>
+  </ul>
+</section>
+
+<section id="estimator">
+  <h2>2. Cost estimator</h2>
+  <div class="calc">
+    <div class="fields">
+      <div class="field">
+        <label for="guests">Total guests</label>
+        <input type="number" id="guests" min="1" max="400" value="200">
+        <span class="hint">Windsor Hall seats 200 with a dance floor.</span>
+      </div>
+      <div class="field">
+        <label for="rule">Split menu pricing</label>
+        <select id="rule">
+          <option value="own" selected>Each guest pays for their own entrée</option>
+          <option value="max">Everyone pays the highest entrée price</option>
+        </select>
+        <span class="hint">The package doesn't say. See open item 4.</span>
+      </div>
+      <div class="field">
+        <label for="taxmode">How tax applies</label>
+        <select id="taxmode">
+          <option value="fb" selected>8% on food and beverage only (×1.30)</option>
+          <option value="all">8% on food, beverage and gratuity (×1.3176)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="bar">Bar level</label>
+        <select id="bar">
+          <option value="0" selected>1st Level (included)</option>
+          <option value="1">2nd Level (+$12/pp)</option>
+          <option value="2">3rd Level (+$19/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="hours">Extra bar hour</label>
+        <select id="hours">
+          <option value="0" selected>None</option>
+          <option value="1">1 extra hour</option>
+        </select>
+        <span class="hint">$15, $17 or $17/pp by level. Only the first extra hour is priced.</span>
+      </div>
+      <div class="field">
+        <label for="wine2">Second wine selection</label>
+        <select id="wine2">
+          <option value="0" selected>No</option>
+          <option value="1">Yes</option>
+        </select>
+        <span class="hint">$7, $12 or $17/pp by level.</span>
+      </div>
+      <div class="field">
+        <label for="first">First course</label>
+        <select id="first">
+          <option value="0" selected>Soup (included)</option>
+          <option value="6">Upgraded soup or warm vol-au-vent (+$6/pp)</option>
+          <option value="8">Warm appetizer: ravioli, portobello, eggplant, penne (+$8/pp)</option>
+          <option value="9">Cold appetizer: shrimp cocktail, tuna or salmon (+$9/pp)</option>
+          <option value="14">Crab cakes (+$14/pp)</option>
+          <option value="16">King crab, tuna tartare or beef carpaccio (+$16/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cold">Upgrade hors d'oeuvres: cold, batches of 20</label>
+        <input type="number" id="cold" min="0" max="50" value="0">
+        <span class="hint">$100 per 20 pieces.</span>
+      </div>
+      <div class="field">
+        <label for="hot">Upgrade hors d'oeuvres: hot, batches of 20</label>
+        <input type="number" id="hot" min="0" max="50" value="0">
+        <span class="hint">$135 per 20 pieces.</span>
+      </div>
+      <div class="field">
+        <label for="cake">Outside wedding cake ($)</label>
+        <input type="number" id="cake" min="0" max="20000" step="100" value="0">
+        <span class="hint">The client provides the cake. Enter your bakery budget.</span>
+      </div>
+      <div class="field">
+        <span style="font-weight:500;font-size:0.85rem">Other add-ons</span>
+        <div class="checks">
+          <label for="salad"><input type="checkbox" id="salad"> Upgraded salad, +$5/pp</label>
+        </div>
+      </div>
+    </div>
+    <h3>Entrée mix</h3>
+    <p class="small">Choose up to three entrées, vegetarian included, and drag each slider to set its share of guests. Shares are scaled to add up to 100%. Set a row to "Not offered" to drop it.</p>
+    <div class="tbl"><table class="data mix stack">
+      <thead><tr><th>Entrée</th><th>Share</th><th class="r">Guests</th><th class="r">Price / pp</th></tr></thead>
+      <tbody id="mix-body"></tbody>
+    </table></div>
+    <div class="tbl"><table class="data">
+      <thead><tr><th>Line</th><th class="r">Amount</th></tr></thead>
+      <tbody id="calc-body"></tbody>
+    </table></div>
+  </div>
+  <p class="small">Method: the entrée mix sets the average entrée price. Every guest pays that plus the bar, wine, first-course and salad upgrades. The upgrade hors d'oeuvres are added as a lump sum. A 22% gratuity and 8% tax apply to all food and beverage. The cake is added without fees because it comes from an outside bakery. Children's and vendor meals aren't listed, so they're not included.</p>
+</section>
+
+<section id="included">
+  <h2>3. Package inclusions</h2>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Cocktail reception</th><td>4 butler-passed hors d'oeuvres</td></tr>
+      <tr><th>Dinner</th><td>Soup (a plated appetizer is an upgrade), salad, entrée with a potato and vegetable, breads, coffee and tea</td></tr>
+      <tr><th>Wedding cake</th><td><strong>Provided by the client</strong>, not included</td></tr>
+      <tr><th>Bar</th><td>4-hour 1st Level bar, champagne toast, house white and red wine with dinner</td></tr>
+      <tr><th>Linen and décor</th><td>Ivory tablecloths and napkins, votive candles, dance floor</td></tr>
+      <tr><th>Service</th><td>Bartender fee waived; complimentary valet parking</td></tr>
+      <tr><th>Menu</th><td>Custom design with the catering managers</td></tr>
+      <tr><th>Ceremony</th><td>The English garden is mentioned, but no fee or details are given</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="entrees">
+  <h2>4. Entrées and pricing</h2>
+  <p>Prices are the all-inclusive package rate per person, before gratuity and tax. Up to 3 entrées, vegetarian included, can be offered. Counts are due in advance, and place cards must show each guest's choice.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Category</th><th>Entrée</th><th class="r">Per person</th></tr></thead>
+    <tbody>
+      <tr><td>Vegetarian</td><td>Moroccan couscous; asparagus risotto; pasta primavera; quinoa and black bean terrine; marinated portobello; mascarpone ravioli; grilled vegetable lasagna</td><td class="r">$150</td></tr>
+      <tr><td>Chicken</td><td>Chicken Marsala; chicken piccata; bone-in chicken breast with roasted pear sauce</td><td class="r">$150</td></tr>
+      <tr><td>Chicken</td><td>Roasted half chicken (citrus jus, or thyme, rosemary and sherry); chicken roulade with figs; coq au vin</td><td class="r">$155</td></tr>
+      <tr><td>Seafood</td><td>Pan-seared walleye pike, red pepper coulis (seasonal)</td><td class="r">$160</td></tr>
+      <tr><td>Seafood</td><td>Slow-roasted salmon, tomato and leek fondue</td><td class="r">$165</td></tr>
+      <tr><td>Beef</td><td>Prime NY strip, green peppercorn sauce</td><td class="r">$170</td></tr>
+      <tr><td>Seafood</td><td>Chilean sea bass, lobster reduction</td><td class="r">$175</td></tr>
+      <tr><td>Beef</td><td>Black Angus filet mignon, Périgourdine sauce</td><td class="r">$185</td></tr>
+      <tr><td>Beef</td><td>Classic beef Wellington</td><td class="r">$200</td></tr>
+      <tr><td>Combination</td><td>Petite filet with rosemary grilled shrimp</td><td class="r">$200</td></tr>
+      <tr><td>Lamb</td><td>Roasted Colorado lamb, garlic jus</td><td class="r">$205</td></tr>
+      <tr><td>Combination</td><td>Petite filet with Chilean sea bass</td><td class="r">$225</td></tr>
+      <tr><td>Combination</td><td>Petite filet with lobster tail</td><td class="r">Market</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Potatoes (choose one)</th><td>Roasted with rosemary and thyme, fingerlings, mashed (garlic or plain), au gratin, duchess</td></tr>
+      <tr><th>Vegetables (choose one)</th><td>Asparagus with lemon, haricots verts, steamed vegetables, grilled garden vegetables, asparagus and zucchini, glazed baby carrots, broccolini</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="courses">
+  <h2>5. Hors d'oeuvres, soup and salad</h2>
+  <h3>Butler-passed hors d'oeuvres (choose 4, included)</h3>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Cold</th><td>Heirloom tomato bruschetta, endive with Boursin, brie crostini, Robiola and fig croustade, prosciutto-wrapped asparagus or melon, eggplant caponata, hummus in phyllo, stuffed cherry tomatoes, stuffed Medjool dates, roasted beet with pecorino, beef carpaccio, beef salami cone, foie gras mousse, duck prosciutto</td></tr>
+      <tr><th>Hot</th><td>Artichoke, leek and Gruyère tartelette; stuffed mushroom; vegetable egg rolls; mini vegetable quesadillas; mini samosa; Vidalia onion tart; truffled polenta; ratatouille croustade; wild mushroom vol-au-vent</td></tr>
+      <tr><th>Cold upgrades ($100 per 20)</th><td>Salmon tartare with caviar, tuna with wasabi, seafood ceviche, shrimp cocktail, king crab, lobster with mango relish, smoked salmon crostini</td></tr>
+      <tr><th>Hot upgrades ($135 per 20)</th><td>Crab or sausage stuffed mushrooms, grilled shrimp, chicken or beef satay, foie gras on brioche, duck confit, chicken quesadillas, BBQ short ribs, crab cakes, beef Wellington, bacon-wrapped scallops</td></tr>
+    </tbody>
+  </table></div>
+  <h3>First course</h3>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Soups (included)</th><td>Roasted tomato bisque, vegetable potage, butternut squash, cream of parsnip with truffle, cream of asparagus, grilled potato leek, broccoli cheddar, gazpacho, cucumber mint, minestrone</td></tr>
+      <tr><th>Soup upgrades (+$6)</th><td>Lobster bisque, white asparagus with crab, wild mushroom with truffles, roasted parsnip with black truffle</td></tr>
+      <tr><th>Appetizer instead of soup</th><td>$6–$16 per person; see the source notes. Risottos and scallops are limited to weddings of 100 or fewer.</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Salad</h3>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Included</th><td>Field greens with pear and walnuts; frisée and watercress; Caesar; wedge; organic baby spinach with wild mushrooms</td></tr>
+      <tr><th>Upgrades (+$5)</th><td>Baby artichoke and arugula; arugula with Gorgonzola and pear; caprese with buffalo mozzarella (seasonal)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="bar">
+  <h2>6. Bar and wine</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Level</th><th class="r">Cost</th><th class="r">Extra hour</th><th class="r">2nd wine</th><th>Spirits</th></tr></thead>
+    <tbody>
+      <tr><th>1st Level</th><td class="r">Included, 4 hr</td><td class="r">$15/pp</td><td class="r">$7/pp</td><td>Gordon's, Deep Eddy, Dewar's, Bacardi, Ocho Blanco, Elijah Craig, Seagram's VO, Hartley VS; Miller Lite, Coors Light, 312, Corona</td></tr>
+      <tr><th>2nd Level</th><td class="r">+$12/pp</td><td class="r">$17/pp</td><td class="r">$12/pp</td><td>Bombay, Ketel One, Monkey Shoulder, Bacardi, Captain Morgan, Canadian Club, Buffalo Trace, Patrón Silver, D'Ussé; 4 beers from the list</td></tr>
+      <tr><th>3rd Level</th><td class="r">+$19/pp</td><td class="r">$17/pp</td><td class="r">$17/pp</td><td>Tanqueray, Don Julio Blanco, Grey Goose, Ron Zacapa 23, Myers's Platinum, Heaven Hill 7 yr, Crown Royal, D'Ussé VSOP; 4 beers from the list</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Wine level</th><th>Sparkling</th><th>White</th><th>Red</th></tr></thead>
+    <tbody>
+      <tr><th>1st</th><td>Avissi Prosecco</td><td>Folie à Deux Chardonnay; Joel Gott Sauvignon Blanc</td><td>Charles Cabernet; Sea Glass Pinot Noir</td></tr>
+      <tr><th>2nd</th><td>Ruffino Lumina Prosecco</td><td>Napa Cellars Chardonnay; Echo Bay Sauvignon Blanc</td><td>Folie à Deux Cabernet; Brassfield Pinot Noir</td></tr>
+      <tr><th>3rd</th><td>The Prisoner Unshackled Brut</td><td>Bravium Chardonnay; Quattro Theory Sauvignon Blanc</td><td>Napa Cellars Cabernet; Joel Gott Pinot Noir</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Each level includes 1 red, 1 white and 1 sparkling wine; a second wine selection costs extra. The beer choices for the 2nd and 3rd Levels are Miller Lite, Coors Light, Goose Island 312, Revolution Anti-Hero IPA and Stella.</p>
+</section>
+
+<section id="payment">
+  <h2>7. Deposit and guarantees</h2>
+  <ul>
+    <li>A signed contract and a non-refundable deposit secure the date. The amount isn't stated.</li>
+    <li>The final count and detailed seating chart are due <strong>5 days before</strong> the wedding.</li>
+    <li>The 22% gratuity and 8% sales tax apply to all food and beverage. Prices may change without notice.</li>
+  </ul>
+</section>
+
+<section id="open">
+  <h2>8. Open items</h2>
+  <div class="tbl"><table class="data stack">
+    <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Capacity</td><td>Windsor Hall seats 200 with a dance floor, below our 215 planning number.</td><td>Ask whether any layout fits 215–225; otherwise the list has to shrink</td></tr>
+      <tr><td>2</td><td>Current pricing</td><td>The package is 2025 pricing.</td><td>Request 2027/2028 rates and a quote</td></tr>
+      <tr><td>3</td><td>Unlisted fees</td><td>No room rental fee, ceremony fee, F&amp;B minimum or deposit amount is listed.</td><td>Confirm each</td></tr>
+      <tr><td>4</td><td>Split menu pricing</td><td>Unclear whether guests pay their own entrée's price or the highest one.</td><td>Confirm</td></tr>
+      <tr><td>5</td><td>Tax on gratuity</td><td>Unclear whether the 8% applies to the 22% gratuity (×1.30 vs ×1.3176).</td><td>Confirm</td></tr>
+      <tr><td>6</td><td>Wedding cake</td><td>Provided by the client.</td><td>Ask about a cake-cutting fee and preferred bakeries</td></tr>
+      <tr><td>7</td><td>Garden ceremony</td><td>Mentioned without a fee, capacity or rain plan.</td><td>Ask</td></tr>
+      <tr><td>8</td><td>Children and vendors</td><td>No meal prices listed.</td><td>Ask</td></tr>
+      <tr><td>9</td><td>Guest rooms</td><td>The inn is a hotel, but the package doesn't mention a room block.</td><td>Ask about a block and rates</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  Source: Deer Path Inn Wedding Package 2025 (PDF). The PDF is a scan and was transcribed by hand.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var ENTREES = [
+    { g: "Vegetarian", n: "Vegetarian entrée (any)", p: 150 },
+    { g: "Chicken", n: "Chicken Marsala", p: 150 },
+    { g: "Chicken", n: "Chicken piccata", p: 150 },
+    { g: "Chicken", n: "Bone-in chicken breast", p: 150 },
+    { g: "Chicken", n: "Roasted half chicken", p: 155 },
+    { g: "Chicken", n: "Chicken roulade", p: 155 },
+    { g: "Chicken", n: "Coq au vin", p: 155 },
+    { g: "Seafood", n: "Walleye pike (seasonal)", p: 160 },
+    { g: "Seafood", n: "Slow-roasted salmon", p: 165 },
+    { g: "Seafood", n: "Chilean sea bass", p: 175 },
+    { g: "Beef and lamb", n: "Prime NY strip", p: 170 },
+    { g: "Beef and lamb", n: "Filet mignon", p: 185 },
+    { g: "Beef and lamb", n: "Beef Wellington", p: 200 },
+    { g: "Beef and lamb", n: "Colorado lamb", p: 205 },
+    { g: "Combination", n: "Petite filet & shrimp", p: 200 },
+    { g: "Combination", n: "Petite filet & sea bass", p: 225 }
+  ];
+  var DEFAULTS = [[1, 45], [11, 45], [0, 10]]; // Chicken Marsala, filet, vegetarian
+  var BAR = [0, 12, 19], HOUR = [15, 17, 17], WINE2 = [7, 12, 17];
+  var fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+  var int = function (el, lo, hi) { var n = parseInt(el.value, 10); if (isNaN(n)) n = 0; return Math.max(lo, Math.min(hi, n)); };
+
+  function options() {
+    var html = '<option value="-1">Not offered</option>', group = null;
+    ENTREES.forEach(function (e, i) {
+      if (e.g !== group) { if (group) html += "</optgroup>"; group = e.g; html += '<optgroup label="' + group + '">'; }
+      html += '<option value="' + i + '">' + e.n + " · " + fmt.format(e.p) + "</option>";
+    });
+    return html + "</optgroup>";
+  }
+  $("mix-body").innerHTML = DEFAULTS.map(function (d, i) {
+    var n = i + 1;
+    return '<tr><td data-label="Entrée"><select id="me' + n + '" aria-label="Entrée ' + n + '">' + options() + "</select></td>" +
+      '<td data-label="Share"><div class="share"><input type="range" id="ms' + n + '" min="0" max="100" step="5" value="' + d[1] + '" aria-label="Entrée ' + n + ' share">' +
+      '<output id="mo' + n + '"></output></div></td>' +
+      '<td class="r" data-label="Guests" id="mg' + n + '"></td><td class="r" data-label="Price / pp" id="mp' + n + '"></td></tr>';
+  }).join("");
+  DEFAULTS.forEach(function (d, i) { $("me" + (i + 1)).value = String(d[0]); });
+
+  function render() {
+    var g = Math.max(1, int($("guests"), 1, 400));
+    var rows = [1, 2, 3].map(function (n) {
+      var idx = parseInt($("me" + n).value, 10);
+      return { n: n, e: idx >= 0 ? ENTREES[idx] : null, w: parseInt($("ms" + n).value, 10) };
+    });
+    var active = rows.filter(function (r) { return r.e && r.w > 0; });
+    if (!active.length && rows[0].e) active = [{ n: 1, e: rows[0].e, w: 100 }];
+    var W = active.reduce(function (a, r) { return a + r.w; }, 0) || 1;
+    var maxP = active.reduce(function (a, r) { return Math.max(a, r.e.p); }, 0);
+    var useMax = $("rule").value === "max";
+
+    rows.forEach(function (r) {
+      var hit = active.filter(function (a) { return a.n === r.n; })[0];
+      var share = hit ? hit.w / W : 0;
+      $("mo" + r.n).textContent = Math.round(share * 100) + "%";
+      $("mg" + r.n).textContent = hit ? Math.round(share * g) : "—";
+      $("mp" + r.n).textContent = r.e ? fmt.format(useMax && hit ? maxP : r.e.p) : "—";
+    });
+
+    var entreeRate = 0;
+    active.forEach(function (r) { entreeRate += (r.w / W) * (useMax ? maxP : r.e.p); });
+    var lvl = parseInt($("bar").value, 10);
+    var barRate = BAR[lvl] + parseInt($("hours").value, 10) * HOUR[lvl] + parseInt($("wine2").value, 10) * WINE2[lvl];
+    var courseRate = parseFloat($("first").value) + ($("salad").checked ? 5 : 0);
+    var rate = entreeRate + barRate + courseRate;
+    var hors = int($("cold"), 0, 50) * 100 + int($("hot"), 0, 50) * 135;
+    var fb = rate * g + hors;
+    var grat = fb * 0.22;
+    var tax = ($("taxmode").value === "all" ? fb + grat : fb) * 0.08;
+    var cake = int($("cake"), 0, 20000);
+    var total = fb + grat + tax + cake;
+    var out = [
+      ["Average entrée price", fmt.format(entreeRate)],
+      ["Bar, extra hour and second wine", fmt.format(barRate)],
+      ["First course and salad upgrades", fmt.format(courseRate)],
+      ["Per-person rate (" + g + " guests)", fmt.format(rate)],
+      ["Upgrade hors d'oeuvres", fmt.format(hors)],
+      ["Food and beverage subtotal", fmt.format(fb)],
+      ["Gratuity, 22%", fmt.format(grat)],
+      ["Sales tax, 8%", fmt.format(tax)],
+      ["Outside wedding cake", fmt.format(cake)]
+    ].map(function (r) { return "<tr><th>" + r[0] + '</th><td class="r">' + r[1] + "</td></tr>"; });
+    out.push('<tr class="total"><th>Estimated total</th><td class="r">' + fmt.format(total) + "</td></tr>");
+    out.push('<tr><th>Per guest</th><td class="r">' + fmt.format(total / g) + "</td></tr>");
+    out.push('<tr><th>Windsor Hall capacity (200 with dance floor)</th><td class="r">' + (g <= 200 ? "Fits" : "Over by " + (g - 200)) + "</td></tr>");
+    $("calc-body").innerHTML = out.join("");
+  }
+  document.querySelector("#estimator").addEventListener("input", render);
+  document.querySelector("#estimator").addEventListener("change", render);
+  render();
+})();
+</script>
+<script>
+/* Label table cells for the stacked mobile layout; mark wide tables so they scroll with a pinned first column. */
+(function () {
+  function prep() {
+    document.querySelectorAll("table.data").forEach(function (t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent.trim(); });
+      if (t.classList.contains("stack")) {
+        t.querySelectorAll("tbody tr").forEach(function (tr) {
+          Array.prototype.forEach.call(tr.children, function (cell, i) {
+            if (!cell.hasAttribute("data-label") && heads[i]) cell.setAttribute("data-label", heads[i]);
+          });
+        });
+      } else if (heads.length >= 4) {
+        t.classList.add("wide");
+        if (t.parentElement.classList.contains("tbl")) t.parentElement.classList.add("scrolls");
+      }
+    });
+  }
+  prep();
+  new MutationObserver(prep).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
