@@ -12,6 +12,7 @@ REPORTS = {
     "hyatt_oakbrook/hyatt-lodge-report.html": "hyatt.html",
     "makray_golf/makray-report.html": "makray.html",
     "royal_melbourne/royal-melbourne-report.html": "royal-melbourne.html",
+    "lincolnshire/lincolnshire-report.html": "lincolnshire.html",
 }
 HEAD = (
     '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'

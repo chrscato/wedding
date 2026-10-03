@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lincolnshire Marriott Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: single 880px document column; title block, metadata, contents, then numbered sections with ruled tables. Light only by design. */
+:root {
+  --paper: #ffffff;
+  --ink: #1b1f24;
+  --muted: #5a6370;
+  --rule: #d5d9de;
+  --head: #f3f5f7;
+  --accent: #1f3b5c;
+  --sans: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 14.5px; line-height: 1.55; }
+.doc { max-width: 880px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; }
+h1 { font-size: 1.75rem; font-weight: 600; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); text-wrap: balance; }
+h3 { font-size: 0.95rem; font-weight: 600; margin: 18px 0 8px; }
+p { margin: 0 0 10px; max-width: 72ch; }
+ul { margin: 0 0 10px; padding-left: 1.3em; }
+li { margin-bottom: 3px; }
+a { color: var(--accent); }
+.sub { color: var(--muted); margin: 0 0 20px; }
+.num, td.r, th.r { font-variant-numeric: tabular-nums; }
+.small { font-size: 0.85rem; color: var(--muted); }
+
+.meta { width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 0.88rem; }
+.meta th { width: 160px; text-align: left; font-weight: 500; color: var(--muted); padding: 5px 0; vertical-align: top; }
+.meta td { padding: 5px 0; }
+.meta tr { border-top: 1px solid var(--rule); }
+.meta tr:last-child { border-bottom: 1px solid var(--rule); }
+
+.toc { border: 1px solid var(--rule); padding: 14px 18px; margin-bottom: 36px; }
+.toc strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.toc ol { margin: 0; columns: 2; column-gap: 32px; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+section { margin-bottom: 40px; scroll-margin-top: 16px; }
+
+.tbl { overflow-x: auto; margin-bottom: 12px; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.data th, .data td { border: 1px solid var(--rule); padding: 6px 10px; text-align: left; vertical-align: top; }
+.data thead th { background: var(--head); font-weight: 600; }
+.data tbody th { font-weight: 400; }
+.data td.r, .data th.r { text-align: right; white-space: nowrap; }
+.data tr.total td, .data tr.total th { font-weight: 600; background: var(--head); }
+
+.calc { border: 1px solid var(--rule); padding: 16px 18px; margin-bottom: 12px; }
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 20px; margin-bottom: 16px; }
+.field { display: grid; gap: 4px; align-content: start; }
+.field label { font-weight: 500; font-size: 0.85rem; }
+.field input[type="number"], .field select { font: inherit; padding: 5px 8px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; font-variant-numeric: tabular-nums; }
+.field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field .hint { font-size: 0.78rem; color: var(--muted); }
+.checks { display: grid; gap: 6px; font-size: 0.88rem; }
+.checks label { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; }
+.checks input { margin-top: 3px; }
+
+.mix select { font: inherit; padding: 4px 6px; border: 1px solid #b9c0c8; border-radius: 2px; background: var(--paper); color: var(--ink); width: 100%; min-width: 200px; }
+.mix .share { display: flex; align-items: center; gap: 10px; min-width: 180px; }
+.mix input[type="range"] { flex: 1; accent-color: var(--accent); }
+.mix output { font-variant-numeric: tabular-nums; width: 3.2em; text-align: right; }
+.mix select:focus-visible, .mix input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+.cols > div { min-width: 0; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem; color: var(--muted); }
+
+@media (max-width: 720px) {
+  .cols { grid-template-columns: minmax(0, 1fr); }
+  .toc ol { columns: 1; }
+  .meta th { width: 120px; }
+}
+
+/* Mobile: wide tables scroll with a pinned first column; .stack tables become cards. */
+.tbl { -webkit-overflow-scrolling: touch; }
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .doc { padding-block: 24px 48px; }
+  h1 { font-size: 1.5rem; }
+  .meta th { width: 100px; }
+  .meta th, .meta td { display: block; width: auto; padding: 2px 0; }
+  .meta td { padding-bottom: 8px; }
+  .calc { padding: 12px; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
+  .field input[type="number"], .field select, .mix select { font-size: 16px; padding: 8px 10px; min-height: 42px; }
+  .checks label { padding: 4px 0; }
+  .checks input { width: 18px; height: 18px; }
+  table.wide { min-width: 560px; }
+  table.wide tbody th:first-child, table.wide tbody td:first-child { position: sticky; left: 0; background: var(--paper); z-index: 1; box-shadow: 1px 0 0 var(--rule); }
+  table.wide thead th:first-child { position: sticky; left: 0; background: var(--head); z-index: 2; }
+  table.wide tr.total th:first-child { background: var(--head); }
+  .tbl.scrolls::after { content: "Swipe sideways to see all columns"; display: block; font-size: 0.75rem; color: var(--muted); padding-top: 4px; }
+
+  table.stack, table.stack tbody, table.stack tr, table.stack td, table.stack th { display: block; width: 100%; }
+  table.stack thead { display: none; }
+  table.stack tr { border: 1px solid var(--rule); margin-bottom: 10px; padding: 8px 12px; }
+  table.stack td, table.stack th { border: 0; padding: 4px 0; text-align: left; white-space: normal; }
+  table.stack td.r { text-align: left; }
+  table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+  .mix select { min-width: 0; }
+  .mix .share { min-width: 0; }
+  .mix input[type="range"] { height: 28px; }
+}
+</style>
+
+</head>
+<body>
+<p style="max-width:880px;margin:0 auto;padding:16px 20px 0;font:14px 'IBM Plex Sans','Segoe UI',system-ui,sans-serif"><a href="./" style="color:#1f3b5c">&larr; All venues</a></p>
+<div class="doc">
+
+<h1>Lincolnshire Marriott Resort</h1>
+<p class="sub">McManus-Cato wedding · Venue evaluation · Lakeside Pavilion</p>
+
+<table class="meta">
+  <tr><th>Venue</th><td>Lincolnshire Marriott Resort, 10 Marriott Dr., Lincolnshire, IL 60069 · (847) 634-0100 · Marriott.com/CHILN</td></tr>
+  <tr><th>Wedding contact</th><td>Marie Kopczyk, Catering Manager</td></tr>
+  <tr><th>Space</th><td>The Lakeside Pavilion: a 5,000 sq ft climate-controlled tent on Lake Lincolnshire</td></tr>
+  <tr><th>Expected guests</th><td>200–225</td></tr>
+  <tr><th>Pricing basis</th><td>2026 wedding menu; the 2027 Lakeside minimum comes from an Aug. 2026 email</td></tr>
+  <tr><th>Prepared</th><td>October 3, 2026</td></tr>
+</table>
+
+<nav class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#estimator">Cost estimator</a></li>
+    <li><a href="#packages">Packages and inclusions</a></li>
+    <li><a href="#entrees">Entrées and pricing</a></li>
+    <li><a href="#courses">Hors d'oeuvres, salad and soup</a></li>
+    <li><a href="#bar">Bar</a></li>
+    <li><a href="#addons">Enhancements</a></li>
+    <li><a href="#venue">Spaces and ceremony</a></li>
+    <li><a href="#payment">Payment and policies</a></li>
+    <li><a href="#vendors">Preferred vendors</a></li>
+    <li><a href="#open">Open items</a></li>
+  </ol>
+</nav>
+
+<section id="summary">
+  <h2>1. Summary</h2>
+  <p>Lincolnshire Marriott sells three packages priced per person by entrée, from $107 to $157 before fees. A 25% taxable service charge and 9.25% tax make the real cost 1.3656× the menu price. When more than one entrée is offered, <strong>everyone pays the highest-priced one</strong>. The Lakeside Pavilion has a $25,000 F&amp;B minimum for 2027 and no rental fee.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
+    <tbody>
+      <tr><th>Rustic Glamour, chicken, raised to the minimum</th><td class="r">$107</td><td class="r">$37,618</td><td class="r">$37,864</td><td class="r">$38,028</td></tr>
+      <tr><th>Handcrafted Romance, salmon prevails, late-night snack</th><td class="r">$134</td><td class="r">$40,076</td><td class="r">$43,067</td><td class="r">$45,061</td></tr>
+      <tr><th>Genuine Indulgence, filet, sweets, late night, extra bar hour</th><td class="r">$202</td><td class="r">$60,834</td><td class="r">$65,381</td><td class="r">$68,413</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>All scenarios include the ceremony ($12/pp, $1,000 minimum, with service charge and tax) and the $200 DJ power box. The top row's food and beverage falls short of $25,000, so it's billed at the minimum.</li>
+    <li>Because of the minimum, upgrading from Rustic Glamour to Handcrafted Romance costs only about $200 all-in at 215 guests. That buys a 4th hors d'oeuvre, the Top Shelf bar and better linens.</li>
+    <li><strong>Capacity:</strong> the Lakeside Pavilion seats 220. A 225-guest list doesn't fit as stated, and 215 fills 98% of it before the dance floor. The Grand Ballroom and Grand Marquee fit, but their minimums are unknown.</li>
+    <li>For comparison, at 215 guests Makray runs $36,657 to $43,469, Royal Melbourne $36,411 to $42,643, and Hyatt Lodge's Classic quote is $49,867.</li>
+  </ul>
+</section>
+
+<section id="estimator">
+  <h2>2. Cost estimator</h2>
+  <div class="calc">
+    <div class="fields">
+      <div class="field">
+        <label for="guests">Total guests</label>
+        <input type="number" id="guests" min="1" max="400" value="215">
+        <span class="hint">Expected range is 200–225. The Lakeside Pavilion seats 220.</span>
+      </div>
+      <div class="field">
+        <label for="pkg">Package</label>
+        <select id="pkg">
+          <option value="0">Rustic Glamour: 3 hors d'oeuvres, Premium bar</option>
+          <option value="1" selected>Handcrafted Romance: 4 hors d'oeuvres, Top Shelf bar</option>
+          <option value="2">Genuine Indulgence: 5 hors d'oeuvres, Luxury bar, chairs</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="rule">Split menu pricing</label>
+        <select id="rule">
+          <option value="max" selected>Highest-priced entrée prevails (menu policy)</option>
+          <option value="own">Each guest pays for their own entrée</option>
+        </select>
+        <span class="hint">The menu says the highest price prevails.</span>
+      </div>
+      <div class="field">
+        <label for="minimum">F&amp;B minimum ($, before fees)</label>
+        <input type="number" id="minimum" min="0" max="100000" step="500" value="25000">
+        <span class="hint">2027 Lakeside Pavilion, from the Aug. 2026 email.</span>
+      </div>
+      <div class="field">
+        <label for="tax">Sales tax</label>
+        <select id="tax">
+          <option value="0.0925" selected>9.25% (menu footers)</option>
+          <option value="0.09">9% (Hotel Information page)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="hours">Extra bar hours</label>
+        <input type="number" id="hours" min="0" max="3" value="0">
+        <span class="hint">$10, $12 or $15/pp per hour, by package.</span>
+      </div>
+      <div class="field">
+        <label for="wine">Wine upgrade</label>
+        <select id="wine">
+          <option value="0" selected>Copper Ridge (included)</option>
+          <option value="5">Proverb (+$5/pp)</option>
+          <option value="7">California Classics (+$7/pp)</option>
+          <option value="10">Sommelier's Selection (+$10/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="soup">Soup course</label>
+        <select id="soup">
+          <option value="0" selected>None</option>
+          <option value="6">Soup en croûte (+$6/pp)</option>
+          <option value="9">Lobster bisque (+$9/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="late">Late-night snack</label>
+        <select id="late">
+          <option value="0" selected>None</option>
+          <option value="12">2 items (+$12/pp)</option>
+          <option value="16">3 items (+$16/pp)</option>
+          <option value="20">4 items (+$20/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="dessert">Sweets</label>
+        <select id="dessert">
+          <option value="0" selected>Wedding cake only</option>
+          <option value="11">Seasonal sweets (+$11/pp)</option>
+          <option value="15">Petite sweets, donut bar or chocolate fountain (+$15/pp)</option>
+          <option value="16">Build your own sweet table (+$16/pp)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="station">Action station</label>
+        <select id="station">
+          <option value="0" selected>None</option>
+          <option value="32">Pasta (+$32/pp)</option>
+          <option value="29">Risotto (+$29/pp)</option>
+        </select>
+        <span class="hint">Plus a $160 chef per 75 guests.</span>
+      </div>
+      <div class="field">
+        <label for="kids">Of those, children (5–12)</label>
+        <input type="number" id="kids" min="0" max="100" value="0">
+        <span class="hint">$29 each.</span>
+      </div>
+      <div class="field">
+        <label for="vendors">Vendor meals (additional)</label>
+        <input type="number" id="vendors" min="0" max="50" value="0">
+        <span class="hint">$59 plated each.</span>
+      </div>
+      <div class="field">
+        <span style="font-weight:500;font-size:0.85rem">Other per-person add-ons</span>
+        <div class="checks">
+          <label for="sides"><input type="checkbox" id="sides" data-pp="2"> Customized sides, $2</label>
+          <label for="salad"><input type="checkbox" id="salad" data-pp="3"> Upgraded salad, $3</label>
+          <label for="d-cheese"><input type="checkbox" id="d-cheese" data-pp="24"> Wisconsin cheese display, $24</label>
+          <label for="d-anti"><input type="checkbox" id="d-anti" data-pp="22"> Italian antipasto display, $22</label>
+          <label for="d-crud"><input type="checkbox" id="d-crud" data-pp="21"> Crudités, $21</label>
+          <label for="d-veg"><input type="checkbox" id="d-veg" data-pp="19"> Grilled vegetable display, $19</label>
+        </div>
+      </div>
+      <div class="field">
+        <span style="font-weight:500;font-size:0.85rem">Ceremony and other charges</span>
+        <div class="checks">
+          <label for="cer"><input type="checkbox" id="cer" checked> Ceremony, $12/pp ($1,000 min.)</label>
+          <label for="cer-bev"><input type="checkbox" id="cer-bev"> Ceremony water and champagne, $8/pp</label>
+          <label for="spider"><input type="checkbox" id="spider" checked> DJ/band power box, $200</label>
+          <label for="coat"><input type="checkbox" id="coat"> Coat check, $225 per 100 guests</label>
+        </div>
+      </div>
+    </div>
+    <h3>Entrée mix (adult guests)</h3>
+    <p class="small">Choose up to four entrées and drag each slider to set its share of guests. Shares are scaled to add up to 100%. Under the menu's rule, every guest pays the highest price on the list. Set a row to "Not offered" to drop it.</p>
+    <div class="tbl"><table class="data mix stack">
+      <thead><tr><th>Entrée</th><th>Share</th><th class="r">Guests</th><th class="r">Price / pp</th></tr></thead>
+      <tbody id="mix-body"></tbody>
+    </table></div>
+    <div class="tbl"><table class="data">
+      <thead><tr><th>Line</th><th class="r">Amount</th></tr></thead>
+      <tbody id="calc-body"></tbody>
+    </table></div>
+  </div>
+  <p class="small">Method: the entrée price comes from the chosen package column, either the highest price offered or a share-weighted average. Adults pay that plus the per-person add-ons and extra bar hours. Children and vendor meals are added, and if the food and beverage total is below the minimum, it's raised to the minimum. The ceremony is added outside the minimum. A 25% service charge and then tax apply to both. The chef, power box and coat check fees are added flat because their tax treatment isn't stated.</p>
+</section>
+
+<section id="packages">
+  <h2>3. Packages and inclusions</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Package</th><th>Hors d'oeuvres</th><th>Bar (4 hours)</th><th>Linens and chairs</th><th class="r">From</th></tr></thead>
+    <tbody>
+      <tr><th>Rustic Glamour</th><td>3 passed</td><td>Premium Brands</td><td>White floor-length linen, white napkins</td><td class="r">$107</td></tr>
+      <tr><th>Handcrafted Romance</th><td>4 passed</td><td>Top Shelf Brands</td><td>Elegance white, black or ivory linen</td><td class="r">$117</td></tr>
+      <tr><th>Genuine Indulgence</th><td>5 passed</td><td>Luxury Brands</td><td>Chair covers with sash or Chiavari chairs; colored Elegance linen and napkins</td><td class="r">$131</td></tr>
+    </tbody>
+  </table></div>
+  <p>Every package also includes:</p>
+  <ul>
+    <li>A wedding event manager before the day and a banquet captain on the day</li>
+    <li>A 3-course dinner (salad, entrée, custom wedding cake), a champagne toast, wine with dinner and a coffee station</li>
+    <li>Votive candles, a hardwood dance floor, and staging for the head table and entertainment</li>
+    <li>A complimentary suite for the couple, a tasting for up to 6, and discounted guest room rates</li>
+    <li>Up to 60,000 Marriott Bonvoy points, reduced green fees at Crane's Landing, and free golf for the couple</li>
+    <li>1 bartender per 100 guests</li>
+  </ul>
+  <p class="small">A $95/pp luncheon package is also offered, with a 3-hour Premium bar and a 3-course lunch.</p>
+</section>
+
+<section id="entrees">
+  <h2>4. Entrées and pricing</h2>
+  <p>Prices are per person by package, before the service charge and tax. Every entrée gets the same starch and vegetable; customizing them costs $2/pp.</p>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Entrée</th><th class="r">Rustic Glamour</th><th class="r">Handcrafted Romance</th><th class="r">Genuine Indulgence</th></tr></thead>
+    <tbody>
+      <tr><th>Roasted chicken or chicken gremolata</th><td class="r">$107</td><td class="r">$117</td><td class="r">$131</td></tr>
+      <tr><th>Lemon herb crusted chicken</th><td class="r">$108</td><td class="r">$118</td><td class="r">$140</td></tr>
+      <tr><th>Grilled chicken, mushroom sherry sauce</th><td class="r">$109</td><td class="r">$119</td><td class="r">$141</td></tr>
+      <tr><th>Chicken coq au vin</th><td class="r">$110</td><td class="r">$120</td><td class="r">$142</td></tr>
+      <tr><th>10 oz NY strip, short rib or 8 oz veal medallions</th><td class="r">$121</td><td class="r">$131</td><td class="r">$153</td></tr>
+      <tr><th>8 oz beef tenderloin</th><td class="r">$123</td><td class="r">$133</td><td class="r">$155</td></tr>
+      <tr><th>Herb crusted salmon</th><td class="r">$112</td><td class="r">$122</td><td class="r">$139</td></tr>
+      <tr><th>Seared walleye pike</th><td class="r">$113</td><td class="r">$123</td><td class="r">$141</td></tr>
+      <tr><th>Seared halibut or pan-seared bass</th><td class="r">$117</td><td class="r">$127</td><td class="r">$145</td></tr>
+      <tr><th>Vegan Wellington or grilled vegetable ravioli</th><td class="r">$107</td><td class="r">$117</td><td class="r">$131</td></tr>
+      <tr><th>Combo: 5 oz filet &amp; chicken</th><td class="r">$124</td><td class="r">$134</td><td class="r">$153</td></tr>
+      <tr><th>Combo: 5 oz filet &amp; salmon</th><td class="r">$125</td><td class="r">$135</td><td class="r">$154</td></tr>
+      <tr><th>Combo: 5 oz filet &amp; bass or shrimp scampi</th><td class="r">$129</td><td class="r">$139</td><td class="r">$157</td></tr>
+      <tr><th>Combo: salmon &amp; chicken</th><td class="r">$116</td><td class="r">$126</td><td class="r">$144</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Other meals</th><th>Detail</th><th class="r">Price</th></tr></thead>
+    <tbody>
+      <tr><td>Children, 5–12</td><td>Fruit cup, kids' entrée, non-alcoholic drink, cake</td><td class="r">$29</td></tr>
+      <tr><td>Vendor, plated</td><td>Salad, chicken or vegetarian entrée, soft drink</td><td class="r">$59</td></tr>
+      <tr><td>Vendor, box</td><td>Turkey club, chips, cookies, fruit, soft drink</td><td class="r">$39</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="courses">
+  <h2>5. Hors d'oeuvres, salad and soup</h2>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><th>Hot</th><td>Vegetable spring rolls, tandoori chicken kabobs, chicken pot sticker, mini Reuben, vegetable quesadilla, bang bang shrimp roll, beef Wellington, Italian sausage calzone, artichoke beignets, bacon-wrapped brisket, mini crab cakes, vegan falafel</td></tr>
+      <tr><th>Cold</th><td>Mushroom ricotta crostini; peach, prosciutto and mozzarella skewer; tiger shrimp with Cajun mango relish; vegan jackfruit cake; mozzarella and tomato skewer; tenderloin crostini; tomato bruschetta; avocado, prosciutto and Manchego; spicy tuna cone; vegan garden tartlet</td></tr>
+      <tr><th>Upgrades (50-piece min.)</th><td>Veal tenderloin $6; lobster salad tart, lamb chops, scallop risotto $8; jumbo shrimp cocktail $9; crab claws $10 (each)</td></tr>
+      <tr><th>Salads (included)</th><td>Traditional Caesar, Summer Market, Fall Market, Greek</td></tr>
+      <tr><th>Salads (+$3/pp)</th><td>Spinach and beet, Harvest, Apple and watercress, Arugula</td></tr>
+      <tr><th>Soup en croûte</th><td>A 4th course: chicken wild rice, potato leek, corn chowder, mushroom herb, roasted tomato or butternut squash at $6; lobster bisque at $9</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="bar">
+  <h2>6. Bar</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Package</th><th>Comes with</th><th class="r">Extra hour</th><th>Spirits</th></tr></thead>
+    <tbody>
+      <tr><th>Premium Brands</th><td>Rustic Glamour</td><td class="r">$10/pp</td><td>Wheatly, Ford's, Cane Run, Jim Beam, Grant's, Familia Camarena, Hennessy VS</td></tr>
+      <tr><th>Top Shelf Brands</th><td>Handcrafted Romance (or +$10/pp)</td><td class="r">$12/pp</td><td>Tito's, Tanqueray, Captain Morgan, Bacardi, Monkey Shoulder, Jack Daniel's, Maker's Mark, Milagro Reposado, Hennessy VS</td></tr>
+      <tr><th>Luxury Brands</th><td>Genuine Indulgence (or +$12/pp)</td><td class="r">$15/pp</td><td>Ketel One, Hendrick's, Captain Morgan, Bacardi, Woodford Reserve, Jack Daniel's, Crown Royal, JW Black, Casamigos Blanco, Hennessy VSOP</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Every package includes Michelob Ultra, Miller Lite, Sam Adams, Corona, Truly, Two Brothers and Five Eyes on draft; Copper Ridge wines; and an NA IPA and soft drinks. Wine upgrades are Proverb (+$5), California Classics (+$7) and Sommelier's Selection (+$10).</p>
+</section>
+
+<section id="addons">
+  <h2>7. Enhancements</h2>
+  <div class="cols">
+    <div>
+      <h3>Displays and stations (per person)</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>Wisconsin cheese selection</td><td class="r">$24</td></tr>
+          <tr><td>Italian antipasto</td><td class="r">$22</td></tr>
+          <tr><td>Garden vegetable crudités</td><td class="r">$21</td></tr>
+          <tr><td>Grilled vegetable display</td><td class="r">$19</td></tr>
+          <tr><td>Pasta station (+ chef)</td><td class="r">$32</td></tr>
+          <tr><td>Risotto station (+ chef)</td><td class="r">$29</td></tr>
+          <tr><td>Chef fee, per 75 guests</td><td class="r">$160</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Raw bar (per dozen)</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>Oysters, crab claws, jumbo shrimp</td><td class="r">$72</td></tr>
+          <tr><td>Shrimp cocktail / peel and eat</td><td class="r">$55 / $48</td></tr>
+          <tr><td>Maki / nigiri</td><td class="r">$65 / $78</td></tr>
+          <tr><td>Mussels / clams</td><td class="r">$45 / $50</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3>Sweets (per person)</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>Petite sweets, 3 pieces</td><td class="r">$15</td></tr>
+          <tr><td>Seasonal sweets, 3 pieces</td><td class="r">$11</td></tr>
+          <tr><td>Donut tower and candy station</td><td class="r">$15</td></tr>
+          <tr><td>Chocolate fountain (100 min.)</td><td class="r">$15</td></tr>
+          <tr><td>Build your own sweet table</td><td class="r">$16</td></tr>
+          <tr><td>Seasonal fruit display</td><td class="r">$10</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Late night (per person)</h3>
+      <div class="tbl"><table class="data">
+        <tbody>
+          <tr><td>2 / 3 / 4 items</td><td class="r">$12 / $16 / $20</td></tr>
+          <tr><td>Whole 14" cheese pizza</td><td class="r">$25 each</td></tr>
+        </tbody>
+      </table></div>
+      <p class="small">Late-night items include mini pizzas, paninis, taquitos, quesadillas, egg rolls, crab rangoon, potstickers, wings, pigs in a blanket, potato skins, tenders, mini burgers and mini hot dogs.</p>
+    </div>
+  </div>
+</section>
+
+<section id="venue">
+  <h2>8. Spaces and ceremony</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Space</th><th class="r">Size</th><th class="r">Seated</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><th>Lakeside Pavilion</th><td class="r">5,000 sq ft</td><td class="r">220</td><td>Tent with a deck over Lake Lincolnshire; climate controlled, year-round. $25,000 minimum (2027).</td></tr>
+      <tr><th>Grand Ballroom</th><td class="r">10,080 sq ft</td><td class="r">600</td><td>Divisible; chandeliers. Minimum unknown.</td></tr>
+      <tr><th>Grand Marquee Pavilion</th><td class="r">12,000 sq ft</td><td class="r">650</td><td>Floor-to-ceiling windows, year-round. Minimum unknown.</td></tr>
+      <tr><th>Great Lakes Ballroom</th><td class="r">4,998 sq ft</td><td class="r">150</td><td>Too small for our reception</td></tr>
+      <tr><th>The Grove Pavilion</th><td class="r">3,200 sq ft</td><td class="r">135</td><td>Garden tent, May–October. Too small for our reception.</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Ceremony, $12/pp with a $1,000 minimum.</strong> It includes 2 dressing rooms, house chairs indoors or white garden chairs outdoors, indoor staging, and rehearsal space. A water and champagne station costs $8/pp more.</p>
+  <h3>Other fees</h3>
+  <div class="tbl"><table class="data">
+    <tbody>
+      <tr><td>DJ or band power box, required</td><td class="r">$200</td></tr>
+      <tr><td>Coat check, 1 attendant per 100 guests</td><td class="r">$225 each</td></tr>
+      <tr><td>Welcome gifts: at check-in / delivered to rooms</td><td class="r">$5 / $10 each</td></tr>
+      <tr><td>Cleaning, if debris is left behind</td><td class="r">$600</td></tr>
+      <tr><td>Storage, if vendor items aren't picked up within 1 hour</td><td class="r">$300/day</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="payment">
+  <h2>9. Payment and policies</h2>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>When</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>At contract</td><td>25% of the F&amp;B minimum ($6,250)</td></tr>
+      <tr><td>6 months out</td><td>25% ($6,250)</td></tr>
+      <tr><td>3 months out</td><td>25% ($6,250)</td></tr>
+      <tr><td>14 days out</td><td>Final balance, by credit card or cashier's check</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>Outside vendors can get into the room only 2 hours before the start, and must be out within 1 hour after the end. They need to provide an indemnification agreement and proof of insurance.</li>
+    <li>All food and beverage must come through the hotel; outside items need approval and a waiver. Leftovers can't be taken home.</li>
+    <li>Menu prices are for 2026 and subject to an annual increase.</li>
+  </ul>
+</section>
+
+<section id="vendors">
+  <h2>10. Preferred vendors</h2>
+  <p>The 2026 vendor list doesn't say whether any vendor is required. It includes 13 planners and day-of coordinators, 3 officiants, 8 florists, 9 DJs, 5 bands and string acts, 6 photographers, 4 videographers, and photo booth, hair and makeup, transportation and rental companies. Names and phone numbers are in the source notes.</p>
+  <p class="small">Vendors on more than one venue's list: La Fleur Décor, Impulse Entertainment, Yazz Events, Something Blue Photography, George Street Photo and TWA/Timothy Whaley also appear on Royal Melbourne's list.</p>
+</section>
+
+<section id="open">
+  <h2>11. Open items</h2>
+  <div class="tbl"><table class="data stack">
+    <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Capacity</td><td>The Lakeside Pavilion seats 220. 215 fills 98% of it before the dance floor, DJ and bars, and 225 doesn't fit.</td><td>Ask for a scaled floor plan; get Grand Marquee and Ballroom minimums as a fallback</td></tr>
+      <tr><td>2</td><td>2028 pricing</td><td>The $25,000 minimum is for 2027, and menu prices are 2026 with annual increases.</td><td>Ask for 2028 figures and a cap on increases</td></tr>
+      <tr><td>3</td><td>Minimum source</td><td>The $25,000 figure and "no rental fee" come from an email, not the official PDFs.</td><td>Confirm in writing in the contract</td></tr>
+      <tr><td>4</td><td>Sales tax</td><td>9.25% in the menu footers, 9% on the Hotel Information page.</td><td>Confirm</td></tr>
+      <tr><td>5</td><td>Ceremony fee</td><td>Unclear whether it carries the service charge and tax, and whether it counts toward the minimum.</td><td>Confirm</td></tr>
+      <tr><td>6</td><td>Highest entrée prevails</td><td>Does this apply to vegetarian and allergy meals as well?</td><td>Confirm</td></tr>
+      <tr><td>7</td><td>Rain plan and cocktail hour</td><td>Where cocktail hour happens for a Lakeside reception isn't stated, nor is the indoor backup.</td><td>Ask</td></tr>
+      <tr><td>8</td><td>Staffing</td><td>2 bartenders at 215 guests; valet price not listed.</td><td>Ask about a 3rd bartender and valet cost</td></tr>
+      <tr><td>9</td><td>Phone number</td><td>(847) 634-0100 on the menu, -0110 on the Venues sheet and vendor list.</td><td>Confirm</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  Sources: Lincolnshire Marriott Resort 2026 Wedding Menu, Venues sheet, Vendor List 2026 and Resort Map (PDFs), plus our Aug. 2026 Lakeside Pavilion analysis. Menu and vendor pages were transcribed from images.
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var PKG = ["Rustic Glamour", "Handcrafted Romance", "Genuine Indulgence"];
+  var HOUR = [10, 12, 15];
+  var ENTREES = [
+    { g: "Chicken", n: "Roasted chicken", p: [107, 117, 131] },
+    { g: "Chicken", n: "Chicken gremolata", p: [107, 117, 131] },
+    { g: "Chicken", n: "Lemon herb chicken", p: [108, 118, 140] },
+    { g: "Chicken", n: "Grilled chicken", p: [109, 119, 141] },
+    { g: "Chicken", n: "Chicken coq au vin", p: [110, 120, 142] },
+    { g: "Beef", n: "NY strip", p: [121, 131, 153] },
+    { g: "Beef", n: "Beef short rib", p: [121, 131, 153] },
+    { g: "Beef", n: "Veal medallions", p: [121, 131, 153] },
+    { g: "Beef", n: "Beef tenderloin", p: [123, 133, 155] },
+    { g: "Seafood", n: "Herb crusted salmon", p: [112, 122, 139] },
+    { g: "Seafood", n: "Walleye pike", p: [113, 123, 141] },
+    { g: "Seafood", n: "Seared halibut", p: [117, 127, 145] },
+    { g: "Seafood", n: "Pan-seared bass", p: [117, 127, 145] },
+    { g: "Vegetarian", n: "Vegan Wellington", p: [107, 117, 131] },
+    { g: "Vegetarian", n: "Vegetable ravioli", p: [107, 117, 131] },
+    { g: "Combination", n: "Filet & chicken", p: [124, 134, 153] },
+    { g: "Combination", n: "Filet & salmon", p: [125, 135, 154] },
+    { g: "Combination", n: "Filet & bass", p: [129, 139, 157] },
+    { g: "Combination", n: "Filet & shrimp scampi", p: [129, 139, 157] },
+    { g: "Combination", n: "Salmon & chicken", p: [116, 126, 144] }
+  ];
+  var DEFAULTS = [[0, 45], [8, 45], [13, 10], [-1, 0]]; // Roasted chicken, tenderloin, vegan Wellington
+  var KID = 29, VENDOR = 59;
+  var fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+  var int = function (el, lo, hi) { var n = parseInt(el.value, 10); if (isNaN(n)) n = 0; return Math.max(lo, Math.min(hi, n)); };
+
+  function options(pk) {
+    var html = '<option value="-1">Not offered</option>', group = null;
+    ENTREES.forEach(function (e, i) {
+      if (e.g !== group) { if (group) html += "</optgroup>"; group = e.g; html += '<optgroup label="' + group + '">'; }
+      html += '<option value="' + i + '">' + e.n + " · " + fmt.format(e.p[pk]) + "</option>";
+    });
+    return html + "</optgroup>";
+  }
+  function fillOptions() {
+    var pk = parseInt($("pkg").value, 10);
+    [1, 2, 3, 4].forEach(function (n) { var s = $("me" + n), v = s.value; s.innerHTML = options(pk); s.value = v; });
+  }
+  $("mix-body").innerHTML = DEFAULTS.map(function (d, i) {
+    var n = i + 1;
+    return '<tr><td data-label="Entrée"><select id="me' + n + '" aria-label="Entrée ' + n + '"></select></td>' +
+      '<td data-label="Share"><div class="share"><input type="range" id="ms' + n + '" min="0" max="100" step="5" value="' + d[1] + '" aria-label="Entrée ' + n + ' share">' +
+      '<output id="mo' + n + '"></output></div></td>' +
+      '<td class="r" data-label="Guests" id="mg' + n + '"></td><td class="r" data-label="Price / pp" id="mp' + n + '"></td></tr>';
+  }).join("");
+  [1, 2, 3, 4].forEach(function (n) { $("me" + n).innerHTML = options(1); $("me" + n).value = String(DEFAULTS[n - 1][0]); });
+
+  function render() {
+    var pk = parseInt($("pkg").value, 10);
+    var g = Math.max(1, int($("guests"), 1, 400));
+    var k = int($("kids"), 0, g), v = int($("vendors"), 0, 50), adults = g - k;
+    var rows = [1, 2, 3, 4].map(function (n) {
+      var idx = parseInt($("me" + n).value, 10);
+      return { n: n, e: idx >= 0 ? ENTREES[idx] : null, w: parseInt($("ms" + n).value, 10) };
+    });
+    var active = rows.filter(function (r) { return r.e && r.w > 0; });
+    if (!active.length && rows[0].e) active = [{ n: 1, e: rows[0].e, w: 100 }];
+    var W = active.reduce(function (a, r) { return a + r.w; }, 0) || 1;
+    var maxP = active.reduce(function (a, r) { return Math.max(a, r.e.p[pk]); }, 0);
+    var useMax = $("rule").value === "max";
+
+    rows.forEach(function (r) {
+      var hit = active.filter(function (a) { return a.n === r.n; })[0];
+      var share = hit ? hit.w / W : 0;
+      $("mo" + r.n).textContent = Math.round(share * 100) + "%";
+      $("mg" + r.n).textContent = hit ? Math.round(share * adults) : "—";
+      $("mp" + r.n).textContent = r.e ? fmt.format(useMax && hit ? maxP : r.e.p[pk]) : "—";
+    });
+
+    var entreeRate = 0;
+    active.forEach(function (r) { entreeRate += (r.w / W) * (useMax ? maxP : r.e.p[pk]); });
+    var hours = int($("hours"), 0, 3);
+    var barRate = hours * HOUR[pk] + parseFloat($("wine").value);
+    var station = parseFloat($("station").value);
+    var extras = parseFloat($("soup").value) + parseFloat($("late").value) + parseFloat($("dessert").value) + station;
+    document.querySelectorAll("#estimator input[data-pp]").forEach(function (c) { if (c.checked) extras += parseFloat(c.getAttribute("data-pp")); });
+    var rate = entreeRate + barRate + extras;
+    var fb = rate * adults + KID * k + VENDOR * v;
+    var minimum = int($("minimum"), 0, 100000);
+    var billedFb = Math.max(fb, minimum);
+    var cer = ($("cer").checked ? Math.max(12 * g, 1000) : 0) + ($("cer-bev").checked ? 8 * g : 0);
+    var taxRate = parseFloat($("tax").value);
+    var sc = (billedFb + cer) * 0.25, tax = (billedFb + cer + sc) * taxRate;
+    var chefs = station > 0 ? Math.ceil(g / 75) : 0;
+    var flat = chefs * 160 + ($("spider").checked ? 200 : 0) + ($("coat").checked ? 225 * Math.ceil(g / 100) : 0);
+    var total = billedFb + cer + sc + tax + flat;
+    var out = [
+      [(useMax ? "Entrée price (highest offered)" : "Average entrée price") + ", " + PKG[pk], fmt.format(entreeRate)],
+      ["Extra bar hours and wine upgrade", fmt.format(barRate)],
+      ["Other add-ons", fmt.format(extras)],
+      ["Per-person rate (" + adults + " adults)", fmt.format(rate)],
+      ["Food and beverage ordered", fmt.format(fb)],
+      ["Raised to the minimum", fmt.format(billedFb - fb)],
+      ["Ceremony", fmt.format(cer)],
+      ["Service charge, 25%", fmt.format(sc)],
+      ["Tax, " + parseFloat((taxRate * 100).toFixed(2)) + "%", fmt.format(tax)],
+      ["Chef, power box and coat check", fmt.format(flat)]
+    ].map(function (r) { return "<tr><th>" + r[0] + '</th><td class="r">' + r[1] + "</td></tr>"; });
+    out.push('<tr class="total"><th>Estimated total</th><td class="r">' + fmt.format(total) + "</td></tr>");
+    out.push('<tr><th>Per guest</th><td class="r">' + fmt.format(total / g) + "</td></tr>");
+    out.push('<tr><th>Lakeside Pavilion capacity (220 seated)</th><td class="r">' + (g <= 220 ? "Fits" : "Over by " + (g - 220)) + "</td></tr>");
+    $("calc-body").innerHTML = out.join("");
+  }
+  $("pkg").addEventListener("change", fillOptions);
+  document.querySelector("#estimator").addEventListener("input", render);
+  document.querySelector("#estimator").addEventListener("change", render);
+  render();
+})();
+</script>
+<script>
+/* Label table cells for the stacked mobile layout; mark wide tables so they scroll with a pinned first column. */
+(function () {
+  function prep() {
+    document.querySelectorAll("table.data").forEach(function (t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll("thead th"), function (th) { return th.textContent.trim(); });
+      if (t.classList.contains("stack")) {
+        t.querySelectorAll("tbody tr").forEach(function (tr) {
+          Array.prototype.forEach.call(tr.children, function (cell, i) {
+            if (!cell.hasAttribute("data-label") && heads[i]) cell.setAttribute("data-label", heads[i]);
+          });
+        });
+      } else if (heads.length >= 4) {
+        t.classList.add("wide");
+        if (t.parentElement.classList.contains("tbl")) t.parentElement.classList.add("scrolls");
+      }
+    });
+  }
+  prep();
+  new MutationObserver(prep).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
+
+</body>
+</html>
