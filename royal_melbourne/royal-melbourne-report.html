@@ -119,8 +119,9 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   <tr><th>Venue</th><td>Royal Melbourne Country Club, Long Grove, IL · royalmelbourne.net</td></tr>
   <tr><th>Wedding contact</th><td>Megan Duszynski, Director of Catering · (224) 543-7564 · mduszynski@royalmelbourne.net</td></tr>
   <tr><th>Expected guests</th><td>200–225</td></tr>
-  <tr><th>Pricing basis</th><td>2027 published wedding guide (no quote yet)</td></tr>
-  <tr><th>Prepared</th><td>October 3, 2026</td></tr>
+  <tr><th>Pricing basis</th><td>2027 published wedding guide and the club's sample contract (no quote yet)</td></tr>
+  <tr><th>Dates</th><td>As of August 11, 2026, every June 2028 date was open except Sunday, June 18 (Father's Day). 2028 menus and pricing weren't available yet.</td></tr>
+  <tr><th>Prepared</th><td>October 3, 2026 · updated November 6, 2026 with the sample contract</td></tr>
 </table>
 
 <nav class="toc" aria-label="Contents">
@@ -135,7 +136,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <li><a href="#addons">Displays and stations</a></li>
     <li><a href="#sweets">Sweets and late night</a></li>
     <li><a href="#venue">Spaces, ceremony and tasting</a></li>
-    <li><a href="#payment">Payment and policies</a></li>
+    <li><a href="#payment">Payment and contract terms</a></li>
     <li><a href="#vendors">Preferred vendors and hotels</a></li>
     <li><a href="#open">Open items</a></li>
   </ol>
@@ -143,19 +144,20 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 
 <section id="summary">
   <h2>1. Summary</h2>
-  <p>Royal Melbourne prices its package per person by entrée, from $120 to $147 before fees. A 22% taxable service charge and 8% tax make the real cost 1.3176× the menu price. These figures are estimates from the published 2027 guide; we don't have a quote yet.</p>
+  <p>Royal Melbourne prices its package per person by entrée, from $120 to $147 before fees. A 22% taxable service charge and 8.25% sales tax make the real cost 1.3207× the menu price. The guide says 8% tax, but the club's sample contract says 8.25%, and the contract is used here. These figures are estimates from the published 2027 guide; we don't have a quote yet.</p>
   <div class="tbl"><table class="data">
     <thead><tr><th>Scenario</th><th class="r">Rate / guest</th><th class="r">200 guests</th><th class="r">215 guests</th><th class="r">225 guests</th></tr></thead>
     <tbody>
-      <tr><th>Chicken or salmon for all</th><td class="r">$125</td><td class="r">$32,940</td><td class="r">$35,411</td><td class="r">$37,058</td></tr>
-      <tr><th>Even split: chicken / short rib / filet</th><td class="r">$133.67</td><td class="r">$35,224</td><td class="r">$37,866</td><td class="r">$39,627</td></tr>
-      <tr><th>Filet &amp; crab cake duo for all</th><td class="r">$147</td><td class="r">$38,737</td><td class="r">$41,643</td><td class="r">$43,580</td></tr>
+      <tr><th>Chicken or salmon for all</th><td class="r">$125</td><td class="r">$33,016</td><td class="r">$35,492</td><td class="r">$37,143</td></tr>
+      <tr><th>Even split: chicken / short rib / filet</th><td class="r">$133.67</td><td class="r">$35,305</td><td class="r">$37,953</td><td class="r">$39,719</td></tr>
+      <tr><th>Filet &amp; crab cake duo for all</th><td class="r">$147</td><td class="r">$38,827</td><td class="r">$41,739</td><td class="r">$43,680</td></tr>
     </tbody>
   </table></div>
   <ul>
-    <li>All scenarios include the Standard bar, 4 passed hors d'oeuvres, and one first course. They leave out the $1,000 ceremony set-up because we're not holding the ceremony there. The middle row assumes each guest pays for their own entrée.</li>
+    <li>All scenarios include the Standard bar, 4 passed hors d'oeuvres, and one first course. They leave out the $1,000 ceremony set-up because we're not holding the ceremony there, and assume the $1,500 non-member room rental is waived, as it is in the sample contract. The middle row assumes each guest pays for their own entrée.</li>
     <li><strong>Capacity is the main risk:</strong> the Grand Ballroom seats up to 220. A 225-guest list doesn't fit as stated.</li>
-    <li>The F&amp;B minimum, which varies by date, and the bridal suite fee aren't published.</li>
+    <li><strong>Prices aren't locked until 6 months out.</strong> The contract guarantees food and beverage prices only from six months before the event, so a June 2028 wedding is exposed to a 2028 increase until about December 2027. Use the estimator's price-increase field to allow for it.</li>
+    <li>The F&amp;B minimum, which varies by date, is blank in the sample contract and sets both the spend floor and the cancellation fee. The bridal suite fee isn't published either.</li>
     <li>For comparison, at 215 guests Makray runs $34,907 to $41,719 and Hyatt Lodge's Classic quote is $49,867.</li>
   </ul>
 </section>
@@ -243,6 +245,8 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
         <span style="font-weight:500;font-size:0.85rem">Other charges</span>
         <div class="checks">
           <label for="cer"><input type="checkbox" id="cer"> Ceremony set-up, $1,000</label>
+          <label for="room"><input type="checkbox" id="room"> Non-member room rental, $1,500 (waived in the sample contract)</label>
+          <label for="clean"><input type="checkbox" id="clean"> Cleaning fee, $300 (at the club's discretion)</label>
         </div>
       </div>
     </div>
@@ -257,7 +261,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       <tbody id="calc-body"></tbody>
     </table></div>
   </div>
-  <p class="small">Method: the entrée mix sets the average entrée price. Adults pay that average plus the 4-entrée surcharge, if any, and the per-person add-ons. Children and vendor meals are added, then a 22% service charge, then 8% tax on both. The station is charged for every guest. The ceremony fee and chef attendants are added without service charge or tax because their treatment isn't stated. Paying by credit card adds 3%, which isn't included here.</p>
+  <p class="small">Method: the entrée mix sets the average entrée price. Adults pay that average plus the 4-entrée surcharge, if any, and the per-person add-ons. Children and vendor meals are added, then a 22% service charge, then 8.25% tax on both. The station is charged for every guest. The ceremony fee, room rental, cleaning fee and chef attendants carry no service charge, because the contract limits it to food and beverage, but they carry 8.25% tax because the contract taxes rentals and labor. Paying by credit card adds 3%, which isn't included here. Nothing is added for a shortfall against the F&amp;B minimum, which is unknown.</p>
 </section>
 
 <section id="included">
@@ -411,16 +415,60 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 </section>
 
 <section id="payment">
-  <h2>10. Payment and policies</h2>
+  <h2>10. Payment and contract terms</h2>
+  <p>The club sent a blank copy of its four-page Event Confirmation Agreement on November 6, 2026. It fills in the date, room, times, guest count and food-and-beverage minimum per booking; everything below is the standard language.</p>
+  <h3>Timeline</h3>
   <div class="tbl"><table class="data">
     <thead><tr><th>When</th><th>Due</th></tr></thead>
     <tbody>
-      <tr><td>At contract</td><td>$1,500 non-refundable deposit and a signed contract. The club doesn't hold dates.</td></tr>
+      <tr><td>At contract</td><td>$1,500 non-refundable deposit and a signed contract. The club doesn't hold dates; if someone else asks for the date first, we get five working days to sign.</td></tr>
+      <tr><td>6 months out</td><td>Food and beverage prices become guaranteed. Before that they can change without notice.</td></tr>
       <tr><td>2–4 months out</td><td>Menu tasting</td></tr>
-      <tr><td>14 days out</td><td>Final guest count and final payment, including service charge and tax</td></tr>
+      <tr><td>14 days out</td><td>Final guest count and the estimated payment, including service charge and tax</td></tr>
+      <tr><td>After the event</td><td>Any balance above the deposit and estimate is due on receipt</td></tr>
     </tbody>
   </table></div>
-  <p class="small">Payment can be made by personal or certified check, cash, or credit card with a 3% fee. A food and beverage minimum applies and varies by date. The service charge is 22% and taxable; sales tax is 8%. Prices may change without notice.</p>
+  <p class="small">Payment by personal check to Royal Melbourne Country Club, or by credit card with a 3% fee. The guide also lists certified checks and cash.</p>
+
+  <h3>Fees and charges in the contract</h3>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>Item</th><th class="r">Amount</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Room rental, non-members</td><td class="r">$1,500</td><td>Marked <strong>waived</strong> in the sample. Get the waiver in the signed contract.</td></tr>
+      <tr><td>Food and beverage minimum</td><td class="r">Blank</td><td>Excludes service charge, tax, labor, AV and rentals. Any shortfall is billed as room rental.</td></tr>
+      <tr><td>Service charge</td><td class="r">22%</td><td>On food and beverage only; not on flowers, decor, linens, rentals or other non-F&amp;B items.</td></tr>
+      <tr><td>Sales tax</td><td class="r">8.25%</td><td>"Currently" 8.25%, on taxable items including rentals and labor. The guide says 8%.</td></tr>
+      <tr><td>Use of the room</td><td class="r">6 hours</td><td>Total time in the ballroom or other private rooms. Set-up and teardown must fit the contracted times.</td></tr>
+      <tr><td>Day-of set-up change</td><td class="r">$500</td><td>If the room layout is changed after it's already set.</td></tr>
+      <tr><td>Cleaning fee</td><td class="r">$300</td><td>At the club's discretion, based on the room afterward. No chewing gum may be handed out.</td></tr>
+      <tr><td>Restroom attendants</td><td class="r">$25/hr each</td><td>Optional.</td></tr>
+      <tr><td>Housekeeping</td><td class="r">$25/hr each</td><td>If needed for excess set-up, teardown, unloading or cleanup, including decor litter and carpet cleaning.</td></tr>
+      <tr><td>Club engineer</td><td class="r">$50/hr</td><td>On request for special functions.</td></tr>
+      <tr><td>Ceremony set-up</td><td class="r">$1,000</td><td>Includes the white folding chairs. Not needed.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Cancellation</h3>
+  <div class="tbl"><table class="data">
+    <thead><tr><th>When the club is notified</th><th>Fee</th><th class="r">If the minimum were $25,000</th></tr></thead>
+    <tbody>
+      <tr><td>Signing to 121 days before</td><td>50% of the F&amp;B minimum</td><td class="r">$12,500</td></tr>
+      <tr><td>120 to 90 days before</td><td>75% of the F&amp;B minimum</td><td class="r">$18,750</td></tr>
+      <tr><td>89 days or less before</td><td>100% of anticipated revenue</td><td class="r">$35,000+</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">The fee is due within 30 days of cancelling, then accrues 1% per month. The $1,500 deposit counts toward it. The $25,000 column is only an illustration, since the minimum is blank in the sample; a $25,000 minimum is what Lincolnshire quoted for a comparable room.</p>
+
+  <h3>Other clauses</h3>
+  <ul>
+    <li><strong>Outside vendors</strong> (photographer, DJ, florist, planner) need the club's prior written approval and a certificate of commercial general liability insurance. Our vendor contracts must indemnify the club.</li>
+    <li><strong>Insurance:</strong> we warrant that we carry insurance for our property and all liability from the event. Plan on a one-day event liability policy.</li>
+    <li><strong>Marketing release:</strong> by default the club may use our photos and likeness in its publications and social media without approval or payment. Ask to strike or limit it.</li>
+    <li><strong>Room assignment:</strong> rooms are assigned by contracted guest count and can be substituted if the count changes. Additional set-up fees may apply.</li>
+    <li><strong>Decor:</strong> nothing may be affixed to the building, and no nails or staples. Damage is billed to us. Signs and banners need the general manager's approval.</li>
+    <li><strong>Non-smoking</strong> property. Fines or alarm charges from a guest smoking are ours.</li>
+    <li>The club isn't responsible for anything left on site. Standard force majeure, indemnification, inspection (the club can shut down an event it considers unsafe or illegal) and no-assignment clauses apply, with disputes heard in Lake County.</li>
+  </ul>
 </section>
 
 <section id="vendors">
@@ -448,19 +496,23 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <thead><tr><th>#</th><th>Item</th><th>Detail</th><th>Action</th></tr></thead>
     <tbody>
       <tr><td>1</td><td>Capacity</td><td>The ballroom seats 220, below our 225 upper bound, and that's before a dance floor and head table.</td><td>Confirm the seated capacity with our layout</td></tr>
-      <tr><td>2</td><td>F&amp;B minimum</td><td>It varies by date and isn't published.</td><td>Ask for the minimum on our target dates</td></tr>
+      <tr><td>2</td><td>F&amp;B minimum</td><td>It varies by date, isn't published and is blank in the sample contract. It sets the spend floor and the base for the cancellation fee.</td><td>Ask for the minimum on our target dates before signing</td></tr>
       <tr><td>3</td><td>Bar terms</td><td>The guide implies the Standard bar is included, and doesn't say whether the bar is open during dinner.</td><td>Confirm</td></tr>
       <tr><td>4</td><td>Split menu pricing</td><td>Only the 4-entrée surcharge is stated. It's unclear whether guests pay their own entrée's price.</td><td>Confirm</td></tr>
       <tr><td>5</td><td>Bridal suite</td><td>Listed as an additional fee with no amount.</td><td>Ask the price</td></tr>
-      <tr><td>6</td><td>Ceremony fee taxes</td><td>Unclear whether the $1,000 set-up fee and chef attendant fees carry the service charge and tax.</td><td>Confirm</td></tr>
-      <tr><td>7</td><td>Formal quote</td><td>All figures come from the 2027 guide, which says prices can change without notice.</td><td>Request a quote for our date and headcount</td></tr>
-      <tr><td>8</td><td>Timeline and rain plan</td><td>The end time and the backup for an outdoor ceremony aren't stated.</td><td>Ask</td></tr>
+      <tr><td>6</td><td>Room rental waiver</td><td>The contract carries a $1,500 ballroom fee for non-members. It's waived in the sample, but that's a blank template.</td><td>Get the waiver written into our contract</td></tr>
+      <tr><td>7</td><td>2028 pricing and price lock</td><td>All figures come from the 2027 guide. The contract guarantees prices only from 6 months before the event, and 2028 menus weren't available in August.</td><td>Request a quote for our date; ask for a cap on the increase or an earlier lock</td></tr>
+      <tr><td>8</td><td>Six-hour window</td><td>The contract allows 6 hours in the room. A cocktail hour, dinner and 3 bar hours fill most of it.</td><td>Ask whether an extra bar hour extends the room time, and at what cost</td></tr>
+      <tr><td>9</td><td>Tax rate</td><td>The guide says 8% and the contract says 8.25%. The estimator uses 8.25%.</td><td>Confirm</td></tr>
+      <tr><td>10</td><td>Insurance and vendors</td><td>We and our outside vendors must show liability insurance; vendors need written approval.</td><td>Ask the required limits and whether the DJ and photographer need pre-approval</td></tr>
+      <tr><td>11</td><td>Marketing release</td><td>The contract grants the club use of our likeness without approval.</td><td>Ask to strike or limit the clause</td></tr>
+      <tr><td>12</td><td>Timeline and rain plan</td><td>The end time and the backup for an outdoor cocktail hour aren't stated.</td><td>Ask</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <footer>
-  Source: Royal Melbourne Country Club 2027 Weddings guide (Issuu, KemperSports Management). The guide is image-only and was transcribed by hand.
+  Sources: Royal Melbourne Country Club 2027 Weddings guide (Issuu, KemperSports Management), which is image-only and was transcribed by hand; the club's sample Event Confirmation Agreement (blank template, received November 6, 2026); and Megan Duszynski's August 11, 2026 email on date availability.
 </footer>
 
 </div>
@@ -543,11 +595,16 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     var pct = parseFloat($("inc").value) || 0, YEARS = 1;
     var inc = fb * (Math.pow(1 + pct / 100, YEARS) - 1);
     fb += inc;
-    var sc = fb * 0.22, tax = (fb + sc) * 0.08;
+    var TAX = 0.0825;
+    var sc = fb * 0.22, tax = (fb + sc) * TAX;
     var cer = $("cer").checked ? 1000 : 0;
+    var room = $("room").checked ? 1500 : 0;
+    var clean = $("clean").checked ? 300 : 0;
     var chefs = station > 0 ? Math.ceil(g / 50) : 0;
     var chef = chefs * 150;
-    var total = fb + sc + tax + cer + chef;
+    var fees = cer + room + clean + chef;
+    var feeTax = fees * TAX;
+    var total = fb + sc + tax + fees + feeTax;
     var out = [
       ["Average entrée price", fmt.format(entreeRate)],
       ["4-entrée surcharge (" + count + " entrée" + (count === 1 ? "" : "s") + ")", fmt.format(fourFee)],
@@ -557,9 +614,12 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
       ["Projected increase to 2028 (" + pct + "%/yr for " + YEARS + " yr)", fmt.format(inc)],
       ["Food and beverage subtotal", fmt.format(fb)],
       ["Service charge, 22%", fmt.format(sc)],
-      ["Tax, 8%", fmt.format(tax)],
+      ["Tax, 8.25%", fmt.format(tax)],
       ["Ceremony set-up", fmt.format(cer)],
-      ["Chef attendants (" + chefs + ")", fmt.format(chef)]
+      ["Room rental", fmt.format(room)],
+      ["Cleaning fee", fmt.format(clean)],
+      ["Chef attendants (" + chefs + ")", fmt.format(chef)],
+      ["Tax on fees and labor, 8.25%", fmt.format(feeTax)]
     ].map(function (r) { return "<tr><th>" + r[0] + '</th><td class="r">' + r[1] + "</td></tr>"; });
     out.push('<tr class="total"><th>Estimated total</th><td class="r">' + fmt.format(total) + "</td></tr>");
     out.push('<tr><th>Per guest</th><td class="r">' + fmt.format(total / g) + "</td></tr>");

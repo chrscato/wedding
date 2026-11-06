@@ -4,7 +4,7 @@
 **Website:** www.royalmelbourne.net
 **Wedding contact:** Megan Duszynski, Director of Catering · (224) 543-7564 · mduszynski@royalmelbourne.net
 
-**Source:** [2027 Royal Melbourne CC Wedding Guide](https://issuu.com/kempersportsmanagement/docs/2027_royal_melbourne_cc_wedding_guide) on Issuu (16 pages, published by KemperSports Management). Compiled 2026-10-03. The guide is all images and was transcribed by hand.
+**Sources:** [2027 Royal Melbourne CC Wedding Guide](https://issuu.com/kempersportsmanagement/docs/2027_royal_melbourne_cc_wedding_guide) on Issuu (16 pages, published by KemperSports Management), compiled 2026-10-03; the guide is all images and was transcribed by hand. The club's sample **Event Confirmation Agreement** (4 pages, blank template, received 2026-11-06) is summarized under "Sample contract" below. Megan's 2026-08-11 email said all June 2028 dates were open except Sunday, June 18 (Father's Day), and that 2028 menus and pricing weren't available yet.
 
 ---
 
@@ -13,13 +13,14 @@
 Pricing is **per person by the entrée you choose**: $120 to $147 per person, before fees. The entrée price covers the cocktail hour, dinner, bar and the other items listed under "What's included".
 
 - **22% service charge** on all food & beverage. The guide calls it a "taxable service charge".
-- **8% Illinois sales tax** on food, beverage and the service charge
-- **All-in multiplier = 1.3176×** (1.22 × 1.08)
+- **8.25% Illinois sales tax** on food, beverage and the service charge. The guide says 8%, but the sample contract says "currently at 8.25%"; the contract figure is used here.
+- **All-in multiplier = 1.3207×** (1.22 × 1.0825). The guide's 8% would give 1.3176×.
 - **Four entrée choices:** +$3 per plate. The guide doesn't mention a surcharge for two or three choices.
 - **Soup *and* salad:** +$8 per person. One first course is included.
 - **Ceremony set-up fee:** $1,000
-- **Food & beverage minimum:** applies, and varies by date. The guide doesn't list the amounts.
-- **2027 pricing**, "subject to change without notice."
+- **Food & beverage minimum:** applies, and varies by date. The guide doesn't list the amounts, and the sample contract leaves the figure blank. Any shortfall is billed as room rental.
+- **Room rental:** the contract carries a **$1,500 ballroom fee for non-members**, marked WAIVED in the sample. Get the waiver in the signed contract.
+- **2027 pricing**, "subject to change without notice." The contract adds that prices **aren't guaranteed until 6 months before the event**, so 2028 prices could move until about December 2027.
 
 ---
 
@@ -207,6 +208,51 @@ The club has a **strict no-shot policy**.
 
 ---
 
+## Sample contract (Event Confirmation Agreement)
+
+Megan sent a blank 4-page template on 2026-11-06. The parties are the "Club" and the "Group" (us). The money terms:
+
+| Term | What the contract says |
+|---|---|
+| Deposit | **$1,500, non-refundable**, due by the contract's due date. Deposits are applied against any cancellation fee. |
+| Estimated payment | Due **two weeks before** the event. Any balance above the deposit and estimate is due on receipt after the event. |
+| Payment methods | Personal check to Royal Melbourne Country Club; credit card adds a **3% fee**. |
+| Room rental | **$1,500 for non-members**, for the ballroom. Marked **WAIVED** in the sample. |
+| F&B minimum | Amount left blank ("$ ___"). Excludes service charge, tax, labor, AV and rentals. A shortfall is **billed as room rental**. |
+| Service charge | **22%** on food and beverage only; not on flowers, decor, linens, rentals or other non-F&B items. |
+| Sales tax | **8.25%** "currently," applied to taxable purchases **including rentals and labor**. |
+| Price lock | F&B prices are **not guaranteed until 6 months before** the event. |
+| Facility time | **6 hours** total in the ballroom or other private rooms. |
+| Ceremony set-up | $1,000, including the white folding chairs (not needed). |
+| Day-of set-up change | **$500** if the room set-up is changed after it's already set. |
+| Cleaning fee | **$300** at the club's discretion, based on the room's condition afterward. No chewing gum may be handed out. |
+| Optional staff | Restroom attendants **$25/hr each** (optional). Housekeeping **$25/hr** per person if needed for excess set-up, teardown or cleanup. Club engineer **$50/hr**. |
+| Room with no F&B | $10 per guest service charge (not relevant to us). |
+
+**Cancellation fee** (liquidated damages, payable within 30 days, then 1% per month interest):
+
+| When the club is notified | Fee |
+|---|---|
+| Signing to 121 days before | **50% of the F&B minimum** |
+| 120 to 90 days before | **75% of the F&B minimum** |
+| 89 days or less before | **100% of anticipated revenue** |
+
+Because the fee is tied to the minimum, the blank minimum figure matters twice: it's the floor on spend and the base for cancellation damages.
+
+**Other clauses to know about:**
+
+- **Outside vendors** (photographer, DJ, florist, planner, etc.) need the club's **prior written approval** and must show a certificate of **commercial general liability insurance** with limits equal to ours. Our vendor contracts must indemnify the club.
+- **Insurance:** we warrant that we carry insurance covering our property and all liability for the event. In practice that means a one-day **event liability policy**.
+- **Marketing release:** by default we grant the club permission to use our likeness in photos and publications without approval or compensation. This can be struck or limited.
+- **Decor:** no signs or banners affixed to the building, no nails or staples. Damage is billed to us.
+- **Non-smoking** property; alarm fines or damage from a guest smoking are charged to us.
+- **Group's property:** the club isn't responsible for anything left on site before, during or after.
+- Function rooms are assigned by contracted guest count and can be **substituted if the count changes**. Set-up and teardown must fit the contracted times.
+- Standard force majeure, indemnification, right of inspection (the club can shut down an event it deems unsafe or illegal), no assignment, and Lake County venue for disputes.
+- The sample's "Additional Terms" line reads only "Must be approved by RMCC staff."
+
+---
+
 ## Preferred vendors
 
 **Florists**
@@ -244,25 +290,29 @@ The club has a **strict no-shot policy**.
 
 ## Quick estimate (215 guests, before add-ons)
 
-> **Update 2026-10-03:** the ceremony won't be held at the venue. Without the $1,000 ceremony set-up, the 215-guest totals are $35,411 / $37,866 / $41,643. The report and comparison page use these figures.
+> **Update 2026-11-06:** the sample contract puts sales tax at 8.25%, not the guide's 8%. The table now uses 1.3207×. The ceremony won't be held at the venue, so the reception-only figures ($35,492 / $37,953 / $41,739 at 215 guests) are what the report and comparison page use. At the old 8% they were $35,411 / $37,866 / $41,643.
 
-| Scenario | Per person | F&B subtotal | All-in (×1.3176) | + Ceremony | Total |
+| Scenario | Per person | F&B subtotal | All-in (×1.3207) | + Ceremony | Total |
 |---|---|---|---|---|---|
-| All chicken / salmon | $125 | $26,875 | $35,411 | $1,000 | **$36,411** |
-| Mixed (⅓ chicken $125, ⅓ short rib $134, ⅓ filet $142) | $133.67 | $28,738 | $37,866 | $1,000 | **$38,866** |
-| All filet & crab cake duo | $147 | $31,605 | $41,643 | $1,000 | **$42,643** |
+| All chicken / salmon | $125 | $26,875 | $35,492 | $1,000 | **$36,492** |
+| Mixed (⅓ chicken $125, ⅓ short rib $134, ⅓ filet $142) | $133.67 | $28,738 | $37,953 | $1,000 | **$38,953** |
+| All filet & crab cake duo | $147 | $31,605 | $41,739 | $1,000 | **$42,739** |
 
-These figures assume the $1,000 ceremony set-up fee is not subject to the service charge or tax. They leave out the bridal suite fee, cake design upcharges, vendor meals ($50 each, plus fees) and any shortfall against the date's F&B minimum.
+These figures assume the $1,500 room rental stays waived and the $1,000 ceremony set-up carries no service charge (the contract applies tax to rentals and labor, so it may carry 8.25% tax). They leave out the bridal suite fee, cake design upcharges, vendor meals ($50 each, plus fees), the discretionary $300 cleaning fee, event insurance and any shortfall against the date's F&B minimum.
 
 ---
 
 ## Questions to ask Megan
 
-1. What is the F&B minimum for our target dates?
-2. How much is the bridal suite fee?
-3. Is the Standard bar included in the entrée price? Is the bar open during dinner, or only wine?
-4. Is 220 the hard cap for a seated dinner with a dance floor? Can the veranda or Pre-Function Room take overflow?
-5. Do two or three entrée choices carry a surcharge, or only four?
-6. Is the $1,000 ceremony fee subject to the service charge and tax?
-7. Are there off-peak or Friday/Sunday discounts?
-8. What are the timeline limits (end time, extra-hour pricing beyond the bar)?
+1. What is the F&B minimum for our target dates? It's blank in the sample contract, and it drives both the spend floor and the cancellation fee.
+2. Will the $1,500 non-member room rental be waived for us, in writing, as in the sample?
+3. How much is the bridal suite fee?
+4. Is the Standard bar included in the entrée price? Is the bar open during dinner, or only wine?
+5. Is 220 the hard cap for a seated dinner with a dance floor? Can the veranda or Pre-Function Room take overflow?
+6. Do two or three entrée choices carry a surcharge, or only four?
+7. Prices aren't guaranteed until 6 months out. Can the contract cap the increase from the 2027 guide, or lock 2028 pricing earlier?
+8. The contract allows 6 hours in the room. Does an extra bar hour ($10–14/pp) extend that, or is there a separate room charge?
+9. Can the marketing/likeness release be struck or limited to approval of each use?
+10. What insurance limits do we and our vendors need to show? Do the DJ and photographer need to be on an approved list?
+11. Are there off-peak or Friday/Sunday discounts?
+12. Is the 8.25% sales tax the current rate (the guide says 8%)?

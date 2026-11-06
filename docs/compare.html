@@ -126,8 +126,8 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
 <table class="meta">
   <tr><th>Venues</th><td>Hyatt Lodge Oak Brook, Makray Memorial Golf Club, Royal Melbourne Country Club, Lincolnshire Marriott Resort, Deer Path Inn</td></tr>
   <tr><th>Expected guests</th><td>200–225 (215 planning number)</td></tr>
-  <tr><th>Basis</th><td>Published packages for 4 venues and written quotes for Hyatt; no other venue has quoted yet</td></tr>
-  <tr><th>Prepared</th><td>October 3, 2026</td></tr>
+  <tr><th>Basis</th><td>Published packages for 4 venues and written quotes for Hyatt; no other venue has quoted yet. Royal Melbourne has also sent its sample contract.</td></tr>
+  <tr><th>Prepared</th><td>October 3, 2026 · updated November 6, 2026</td></tr>
 </table>
 
 <nav class="toc" aria-label="Contents">
@@ -214,7 +214,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <tbody>
       <tr><th>Hyatt Lodge</th><td>2028 (quote)</td><td class="r">$160–$225</td><td>19% + 6% admin fee</td><td>7.75% on the admin fee</td><td class="r">~1.33×</td><td>$3,000 + fees ($4,041)</td><td>Not stated</td></tr>
       <tr><th>Makray</th><td>2026 (≤5% increase)</td><td class="r">$116.50–$144</td><td>20%</td><td>10%, incl. service</td><td class="r">1.32×</td><td>None</td><td>$16,000 Saturday</td></tr>
-      <tr><th>Royal Melbourne</th><td>2027</td><td class="r">$120–$147</td><td>22%, taxable</td><td>8%</td><td class="r">1.3176×</td><td>None stated</td><td>Varies; not stated</td></tr>
+      <tr><th>Royal Melbourne</th><td>2027 (locked 6 months out)</td><td class="r">$120–$147</td><td>22%, taxable</td><td>8.25% (contract; guide says 8%)</td><td class="r">1.3207×</td><td>$1,500 for non-members, waived in the sample contract</td><td>Varies; blank in the sample contract. Shortfall billed as room rental</td></tr>
       <tr><th>Lincolnshire</th><td>2026 (annual increase)</td><td class="r">$107–$157</td><td>25%, taxable</td><td>9.25% (or 9%)</td><td class="r">1.3656×</td><td>None (per email)</td><td>$25,000 (2027, per email)</td></tr>
       <tr><th>Deer Path Inn</th><td>2025</td><td class="r">$150–$225</td><td>22% gratuity</td><td>8%</td><td class="r">1.30× (or 1.3176×)</td><td>Not stated</td><td>Not stated</td></tr>
     </tbody>
@@ -252,7 +252,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <tbody>
       <tr><th>Hyatt Lodge</th><td>Deposit not shown on the quote</td><td>14 business days before</td><td>Not stated in the quote</td></tr>
       <tr><th>Makray</th><td>$2,000 non-refundable; 25% of the minimum at 180 days, half the estimate at 90 days</td><td>14 days before (can only go up)</td><td>10 days before, cashier's check or cash only</td></tr>
-      <tr><th>Royal Melbourne</th><td>$1,500 non-refundable; no date holds</td><td>14 days before</td><td>14 days before; card adds 3%</td></tr>
+      <tr><th>Royal Melbourne</th><td>$1,500 non-refundable; no date holds. Cancellation costs 50% of the minimum until 121 days out, 75% to 90 days, then 100% of expected revenue</td><td>14 days before</td><td>Estimate 14 days before, balance on receipt; card adds 3%</td></tr>
       <tr><th>Lincolnshire</th><td>25% of the minimum ($6,250), then 25% at 6 and 3 months</td><td>Not stated</td><td>14 days before, card or cashier's check</td></tr>
       <tr><th>Deer Path Inn</th><td>Non-refundable deposit, amount not stated</td><td>5 days before, with seating chart</td><td>Not stated</td></tr>
     </tbody>
@@ -266,7 +266,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
     <tbody>
       <tr><td>Hyatt Lodge</td><td>Prairie Ballroom capacity at 225; whether the $3,000 room rental still applies without a ceremony; the corrected quote (wrong name and date)</td></tr>
       <tr><td>Makray</td><td>Ballroom capacity at 225; 2028 pricing; whether split-menu pricing uses each entrée or the highest</td></tr>
-      <tr><td>Royal Melbourne</td><td>Whether 215–225 fits a 220-seat room with a dance floor; the F&amp;B minimum for our date; the bridal suite fee</td></tr>
+      <tr><td>Royal Melbourne</td><td>Whether 215–225 fits a 220-seat room with a dance floor; the F&amp;B minimum for our date (it also sets the cancellation fee); the room rental waiver in writing; a cap on the 2028 increase; the bridal suite fee</td></tr>
       <tr><td>Lincolnshire</td><td>Lakeside floor plan for 215–225, or the Grand Marquee minimum; the $25,000 minimum and no-rental-fee in writing; 2028 pricing</td></tr>
       <tr><td>Deer Path Inn</td><td>Whether any layout seats more than 200; 2027/28 pricing; rental fee and minimum</td></tr>
     </tbody>
@@ -284,7 +284,7 @@ footer { border-top: 1px solid var(--rule); padding-top: 12px; font-size: 0.8rem
   var VENUES = [
     { n: "Hyatt Lodge", href: "hyatt.html", y: 2028, v: [49867, 58459, 68483], r: [46669, 49867, 51998], extra: 213 },
     { n: "Makray", href: "makray.html", y: 2026, v: [34907, 38171, 41719], r: [32472, 34907, 36531], extra: 162 },
-    { n: "Royal Melbourne", href: "royal-melbourne.html", y: 2027, v: [35411, 37866, 41643], r: [32940, 35411, 37058], extra: 165, cap: 220 },
+    { n: "Royal Melbourne", href: "royal-melbourne.html", y: 2027, v: [35492, 37953, 41739], r: [33016, 35492, 37143], extra: 165, cap: 220 },
     { n: "Lincolnshire", href: "lincolnshire.html", y: 2026, v: [34341, 39544, 59509], r: [34341, 34341, 34341], extra: 0, cap: 220, star: true },
     { n: "Deer Path Inn", href: "deer-path-inn.html", y: 2025, v: [41925, 46583, 51708], r: [39000, 41925, 43875], extra: 195, cap: 200, note: "over capacity at 215" }
   ];
