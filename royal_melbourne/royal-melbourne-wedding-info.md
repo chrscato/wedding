@@ -248,8 +248,36 @@ Because the fee is tied to the minimum, the blank minimum figure matters twice: 
 - **Non-smoking** property; alarm fines or damage from a guest smoking are charged to us.
 - **Group's property:** the club isn't responsible for anything left on site before, during or after.
 - Function rooms are assigned by contracted guest count and can be **substituted if the count changes**. Set-up and teardown must fit the contracted times.
-- Standard force majeure, indemnification, right of inspection (the club can shut down an event it deems unsafe or illegal), no assignment, and Lake County venue for disputes.
+- No assignment without consent (an attempt counts as a cancellation); Illinois law, Lake County venue for disputes.
 - The sample's "Additional Terms" line reads only "Must be approved by RMCC staff."
+
+### Contract review: changes to request before signing
+
+The Entire Agreement clause voids anything not in the signed contract, and the Group's Property clause says we "may not rely on any verbal or written assurances" from staff. Every change below has to go in the Additional Terms box.
+
+| Priority | Clause | Issue | Ask for |
+|---|---|---|---|
+| High | Entire Agreement / Group's Property | The guide's inclusions (open bar, 4 hors d'oeuvres, toast, cake, coordinator, exclusive use of three rooms), the room-rental waiver and Megan's emails aren't binding unless written in. | Attach the package and menu with prices as an exhibit; list inclusions and the waiver under Additional Terms. |
+| High | Minimum | Blank. Sets the spend floor and the first two cancellation tiers. Shortfall billed as room rental, which is taxed at 8.25%. | A figure for our date, at or below ~200 guests' spend. |
+| High | Cancellation | Inside 90 days: 100% of undefined "total anticipated revenue" (≈ $35,500–$41,700 at 215), plus tax, due in 30 days. No credit if the club resells the date. | Define it as the minimum or latest estimate; credit resale revenue; allow one reschedule within 12 months with the deposit applied. |
+| High | Force majeure | Excuses only the club and lets it terminate; no refund of deposit or payments; doesn't excuse us. | Mutual clause with full refund or reschedule at our choice. |
+| High | Pricing | Open until 6 months out, no cap, while we're already committed. | Lock 2028 prices at signing, or cap the increase over the 2027 guide (3–5%). |
+| Medium | Preamble / Function Room | Club may modify or end the contract if our info "materially changes," and may swap rooms if the count changes. No thresholds. | Guarantee the Grand Ballroom for a stated range (e.g. 175–220); drop or define the termination right. |
+| Medium | Indemnification / Damages | One-way, covers anything "in any way related to" the event, no carve-out for the club's negligence. | Add "except to the extent caused by the Club's negligence or willful misconduct"; ideally mutual. |
+| Medium | Right of Inspection / Compliance | Club can end the event in its "sole discretion" for "inappropriate" activity; we still owe everything. | Limit to illegal or unsafe activity, with a warning first where practical. |
+| Medium | Use of Facility | 6 hours; unclear whether set-up, vendor load-in and teardown count. The reception itself takes ~5½. | Write in start/end times, vendor access window, and the price of an extra hour. |
+| Medium | Insurance / Outside Contractors | Vendor limits must equal ours "as noted below," but no limits are stated anywhere. | The exact limits; written approval of photographer and DJ at signing. |
+| Medium | Marketing | Irrevocable release of our likeness, no approval, no payment. | Strike, or limit to images we approve. |
+| Low | Cleaning / Housekeeping | $300 fee at the club's discretion; housekeeping added "automatically." | Itemized charge with a reason before the final bill. |
+| Low | Payments | A late estimated payment lets the club drop the hold. | Written notice and a cure period. |
+
+**Not in the contract at all:**
+- Final count deadline and how far the count can drop (the guide says 14 days out).
+- Any refund or remedy if the club cancels, double-books, renovates or can't deliver the ballroom.
+- Exclusive use of the Pre-Function Room, Veranda and Ballroom (promised in the guide).
+- A rain plan for the veranda cocktail hour.
+
+**Template errors to fix in the real contract:** the tax paragraph says "the Member" instead of the Group; Megan's email in the signature block is misspelled "royalmlbourne.net"; the $500 change fee refers to a ceremony set-up we won't have; the Additional Term "Must be approved by RMCC staff" doesn't say what.
 
 ---
 
@@ -292,13 +320,13 @@ Because the fee is tied to the minimum, the blank minimum figure matters twice: 
 
 > **Update 2026-11-06:** the sample contract puts sales tax at 8.25%, not the guide's 8%. The table now uses 1.3207×. The ceremony won't be held at the venue, so the reception-only figures ($35,492 / $37,953 / $41,739 at 215 guests) are what the report and comparison page use. At the old 8% they were $35,411 / $37,866 / $41,643.
 
-| Scenario | Per person | F&B subtotal | All-in (×1.3207) | + Ceremony | Total |
-|---|---|---|---|---|---|
-| All chicken / salmon | $125 | $26,875 | $35,492 | $1,000 | **$36,492** |
-| Mixed (⅓ chicken $125, ⅓ short rib $134, ⅓ filet $142) | $133.67 | $28,738 | $37,953 | $1,000 | **$38,953** |
-| All filet & crab cake duo | $147 | $31,605 | $41,739 | $1,000 | **$42,739** |
+| Scenario | Per person | F&B subtotal | All-in (×1.3207) |
+|---|---|---|---|
+| All chicken / salmon | $125 | $26,875 | **$35,492** |
+| Mixed (⅓ chicken $125, ⅓ short rib $134, ⅓ filet $142) | $133.67 | $28,738 | **$37,953** |
+| All filet & crab cake duo | $147 | $31,605 | **$41,739** |
 
-These figures assume the $1,500 room rental stays waived and the $1,000 ceremony set-up carries no service charge (the contract applies tax to rentals and labor, so it may carry 8.25% tax). They leave out the bridal suite fee, cake design upcharges, vendor meals ($50 each, plus fees), the discretionary $300 cleaning fee, event insurance and any shortfall against the date's F&B minimum.
+These are reception-only figures at 2027 prices: the $1,000 ceremony set-up is left out because the ceremony will likely be at St. James (a $1,500 church fee, the same whichever venue we choose). They assume the $1,500 room rental stays waived. They leave out the bridal suite fee, cake design upcharges, vendor meals ($50 each, plus fees), the discretionary $300 cleaning fee, event insurance and any shortfall against the date's F&B minimum.
 
 ---
 
@@ -316,3 +344,5 @@ These figures assume the $1,500 room rental stays waived and the $1,000 ceremony
 10. What insurance limits do we and our vendors need to show? Do the DJ and photographer need to be on an approved list?
 11. Are there off-peak or Friday/Sunday discounts?
 12. Is the 8.25% sales tax the current rate (the guide says 8%)?
+13. Will the club attach the package and menu to the contract and accept the changes in "Contract review" above (mutual force majeure with refund, defined cancellation base with resale credit, negligence carve-out on the indemnity, guaranteed ballroom)?
+14. What's the final-count deadline, and how far can the count drop after signing?
